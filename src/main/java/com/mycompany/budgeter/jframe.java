@@ -26,17 +26,15 @@ public class jframe extends javax.swing.JFrame {
     cl = new CardLayout();
     panelDisplay.setLayout(cl);
 
-    // Tambahkan label agar kelihatan isi panelnya
     incomePanel.add(new JLabel("Ini halaman Income"));
     expensePanel.add(new JLabel("Ini halaman Expense"));
     historyPanel.add(new JLabel("Ini halaman History"));
 
-    // Tambahkan panel ke CardLayout
     panelDisplay.add(incomePanel, "income");
     panelDisplay.add(expensePanel, "expense");
     panelDisplay.add(historyPanel, "history");
 
-    cl.show(panelDisplay, "income"); // tampilkan awal
+    cl.show(panelDisplay, "income"); 
 }
 
 
@@ -55,106 +53,227 @@ public class jframe extends javax.swing.JFrame {
         btnExpense = new javax.swing.JButton();
         btnHistory = new javax.swing.JButton();
         panelDisplay = new javax.swing.JPanel();
-        expensePanel = new javax.swing.JPanel();
-        btnAddExpense = new javax.swing.JLabel();
         incomePanel = new javax.swing.JPanel();
-        btnAddIncome = new javax.swing.JLabel();
+        lblAddIncome = new javax.swing.JLabel();
+        fieldValueIncome = new javax.swing.JTextField();
+        fieldTimeIncome = new javax.swing.JTextField();
+        fieldValueIncome1 = new javax.swing.JTextField();
+        expensePanel = new javax.swing.JPanel();
+        lblAddExpense = new javax.swing.JLabel();
+        fieldValueExpense = new javax.swing.JTextField();
+        fieldTimeExpense = new javax.swing.JTextField();
+        fieldExpenseType = new javax.swing.JTextField();
         historyPanel = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelMenu.setBackground(new java.awt.Color(242, 242, 255));
-        panelMenu.setLayout(new java.awt.GridBagLayout());
 
+        btnIncome.setBackground(new java.awt.Color(242, 242, 255));
+        btnIncome.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnIncome.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnIncome.setLabel("Income");
+        btnIncome.setMaximumSize(new java.awt.Dimension(120, 55));
+        btnIncome.setMinimumSize(new java.awt.Dimension(120, 55));
+        btnIncome.setPreferredSize(new java.awt.Dimension(150, 55));
         btnIncome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIncomeActionPerformed(evt);
             }
         });
-        panelMenu.add(btnIncome, new java.awt.GridBagConstraints());
 
+        btnExpense.setBackground(new java.awt.Color(242, 242, 255));
+        btnExpense.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnExpense.setActionCommand("Expense");
         btnExpense.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnExpense.setLabel("Expense");
+        btnExpense.setMaximumSize(new java.awt.Dimension(120, 55));
+        btnExpense.setMinimumSize(new java.awt.Dimension(120, 55));
+        btnExpense.setPreferredSize(new java.awt.Dimension(150, 55));
         btnExpense.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExpenseActionPerformed(evt);
             }
         });
-        panelMenu.add(btnExpense, new java.awt.GridBagConstraints());
 
+        btnHistory.setBackground(new java.awt.Color(242, 242, 255));
+        btnHistory.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnHistory.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnHistory.setLabel("History");
+        btnHistory.setMaximumSize(new java.awt.Dimension(120, 55));
+        btnHistory.setMinimumSize(new java.awt.Dimension(120, 55));
+        btnHistory.setPreferredSize(new java.awt.Dimension(150, 55));
         btnHistory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHistoryActionPerformed(evt);
             }
         });
-        panelMenu.add(btnHistory, new java.awt.GridBagConstraints());
+
+        javax.swing.GroupLayout panelMenuLayout = new javax.swing.GroupLayout(panelMenu);
+        panelMenu.setLayout(panelMenuLayout);
+        panelMenuLayout.setHorizontalGroup(
+            panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelMenuLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnHistory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnExpense, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnIncome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(56, Short.MAX_VALUE))
+        );
+
+        panelMenuLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnExpense, btnHistory, btnIncome});
+
+        panelMenuLayout.setVerticalGroup(
+            panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelMenuLayout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(btnIncome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(btnExpense, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addComponent(btnHistory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         jPanel1.add(panelMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 560));
 
         panelDisplay.setBackground(new java.awt.Color(255, 255, 239));
 
-        expensePanel.setBackground(new java.awt.Color(153, 255, 255));
+        incomePanel.setBackground(new java.awt.Color(255, 231, 231));
 
-        btnAddExpense.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
-        btnAddExpense.setText("Add Expense");
+        lblAddIncome.setFont(new java.awt.Font("Segoe UI Emoji", 1, 18)); // NOI18N
+        lblAddIncome.setText("Add Income");
 
-        javax.swing.GroupLayout expensePanelLayout = new javax.swing.GroupLayout(expensePanel);
-        expensePanel.setLayout(expensePanelLayout);
-        expensePanelLayout.setHorizontalGroup(
-            expensePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(expensePanelLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(btnAddExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(449, Short.MAX_VALUE))
-        );
-        expensePanelLayout.setVerticalGroup(
-            expensePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(expensePanelLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(btnAddExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(477, Short.MAX_VALUE))
-        );
+        fieldValueIncome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldValueIncomeActionPerformed(evt);
+            }
+        });
 
-        incomePanel.setBackground(new java.awt.Color(255, 153, 153));
+        fieldTimeIncome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldTimeIncomeActionPerformed(evt);
+            }
+        });
 
-        btnAddIncome.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
-        btnAddIncome.setText("Add Income");
+        fieldValueIncome1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldValueIncome1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout incomePanelLayout = new javax.swing.GroupLayout(incomePanel);
         incomePanel.setLayout(incomePanelLayout);
         incomePanelLayout.setHorizontalGroup(
             incomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(incomePanelLayout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(btnAddIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(439, Short.MAX_VALUE))
+                .addGap(45, 45, 45)
+                .addGroup(incomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(fieldValueIncome, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+                    .addComponent(lblAddIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldTimeIncome, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+                    .addComponent(fieldValueIncome1, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE))
+                .addContainerGap(230, Short.MAX_VALUE))
         );
         incomePanelLayout.setVerticalGroup(
             incomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(incomePanelLayout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(btnAddIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(456, Short.MAX_VALUE))
+                .addGap(50, 50, 50)
+                .addComponent(lblAddIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(fieldTimeIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(fieldValueIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(fieldValueIncome1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(140, Short.MAX_VALUE))
         );
 
-        historyPanel.setBackground(new java.awt.Color(204, 255, 204));
+        fieldValueIncome.getAccessibleContext().setAccessibleName("");
+        fieldTimeIncome.getAccessibleContext().setAccessibleName("");
+        fieldValueIncome1.getAccessibleContext().setAccessibleName("");
+
+        expensePanel.setBackground(new java.awt.Color(212, 249, 249));
+
+        lblAddExpense.setFont(new java.awt.Font("Segoe UI Emoji", 1, 18)); // NOI18N
+        lblAddExpense.setText("Add Expense");
+
+        fieldValueExpense.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldValueExpenseActionPerformed(evt);
+            }
+        });
+
+        fieldExpenseType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldExpenseTypeActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout expensePanelLayout = new javax.swing.GroupLayout(expensePanel);
+        expensePanel.setLayout(expensePanelLayout);
+        expensePanelLayout.setHorizontalGroup(
+            expensePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(expensePanelLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addGroup(expensePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblAddExpense, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(expensePanelLayout.createSequentialGroup()
+                        .addGroup(expensePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(fieldExpenseType, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+                            .addComponent(fieldValueExpense, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(fieldTimeExpense, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addContainerGap(242, Short.MAX_VALUE))))
+        );
+        expensePanelLayout.setVerticalGroup(
+            expensePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(expensePanelLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(lblAddExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
+                .addComponent(fieldValueExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(fieldTimeExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(fieldExpenseType, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(173, Short.MAX_VALUE))
+        );
+
+        historyPanel.setBackground(new java.awt.Color(234, 255, 234));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout historyPanelLayout = new javax.swing.GroupLayout(historyPanel);
         historyPanel.setLayout(historyPanelLayout);
         historyPanelLayout.setHorizontalGroup(
             historyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 620, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, historyPanelLayout.createSequentialGroup()
+                .addContainerGap(153, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
         );
         historyPanelLayout.setVerticalGroup(
             historyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 560, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, historyPanelLayout.createSequentialGroup()
+                .addContainerGap(125, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64))
         );
 
         javax.swing.GroupLayout panelDisplayLayout = new javax.swing.GroupLayout(panelDisplay);
@@ -168,10 +287,7 @@ public class jframe extends javax.swing.JFrame {
             .addGroup(panelDisplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(historyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(panelDisplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panelDisplayLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(expensePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+                .addComponent(expensePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelDisplayLayout.setVerticalGroup(
             panelDisplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,10 +298,7 @@ public class jframe extends javax.swing.JFrame {
             .addGroup(panelDisplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(historyPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(panelDisplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panelDisplayLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(expensePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+                .addComponent(expensePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1.add(panelDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 620, 560));
@@ -218,6 +331,26 @@ public class jframe extends javax.swing.JFrame {
         // TODO add your handling code here:
         cl.show(panelDisplay, "expense");
     }//GEN-LAST:event_btnExpenseActionPerformed
+
+    private void fieldExpenseTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldExpenseTypeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fieldExpenseTypeActionPerformed
+
+    private void fieldValueIncomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldValueIncomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fieldValueIncomeActionPerformed
+
+    private void fieldValueIncome1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldValueIncome1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fieldValueIncome1ActionPerformed
+
+    private void fieldValueExpenseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldValueExpenseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fieldValueExpenseActionPerformed
+
+    private void fieldTimeIncomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldTimeIncomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fieldTimeIncomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -255,15 +388,23 @@ public class jframe extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel btnAddExpense;
-    private javax.swing.JLabel btnAddIncome;
     public javax.swing.JButton btnExpense;
     public javax.swing.JButton btnHistory;
     public javax.swing.JButton btnIncome;
     private javax.swing.JPanel expensePanel;
+    private javax.swing.JTextField fieldExpenseType;
+    private javax.swing.JTextField fieldTimeExpense;
+    private javax.swing.JTextField fieldTimeIncome;
+    private javax.swing.JTextField fieldValueExpense;
+    private javax.swing.JTextField fieldValueIncome;
+    private javax.swing.JTextField fieldValueIncome1;
     private javax.swing.JPanel historyPanel;
     private javax.swing.JPanel incomePanel;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel lblAddExpense;
+    private javax.swing.JLabel lblAddIncome;
     public javax.swing.JPanel panelDisplay;
     private javax.swing.JPanel panelMenu;
     // End of variables declaration//GEN-END:variables
