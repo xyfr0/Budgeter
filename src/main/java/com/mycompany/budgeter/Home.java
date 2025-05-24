@@ -1,13 +1,31 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.mycompany.budgeter;
+import java.time.LocalDateTime;
+import java.util.List;
 
-/**
- *
- * @author MSIG6
- */
 public class Home {
+    private LocalDateTime dateHome;
+    // No transactionHome variable shown in updated diagram
     
+    public LocalDateTime getDateHome() {
+        return dateHome;
+    }
+    
+    public void setDateHome(LocalDateTime dateHome) {
+        this.dateHome = dateHome;
+    }
+    
+    public List<Transaction> getTransactionHome() {
+        return null;
+    }
+    
+    public double getIncomeHome() {
+        return 0;
+    }
+    
+    public double getExpenseHome() {
+        return 0;
+    }
+    
+    public double getBalance() {
+        return 0;
+    }
 }
