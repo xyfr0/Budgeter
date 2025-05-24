@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Home {
     private LocalDateTime dateHome;
-    // No transactionHome variable shown in updated diagram
+
     
     public LocalDateTime getDateHome() {
         return dateHome;
