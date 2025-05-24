@@ -9,5 +9,11 @@ package com.mycompany.budgeter.model;
  * @author jabba
  */
 public class Transaction {
+    int id;
+    String category;
+    double amount;
+    String description;
+    
+    
     
 }
