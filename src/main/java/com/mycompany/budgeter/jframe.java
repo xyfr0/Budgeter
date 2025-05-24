@@ -16,28 +16,16 @@ public class jframe extends javax.swing.JFrame {
     /**
      * Creates new form jframe
      */
-    private CardLayout cl;
+    CardLayout cardLayout;
+    CardLayout cardLayout2;
     
     public jframe() {
         initComponents();
-        setupCardLayout();
+        cardLayout = (CardLayout)(panelDisplay.getLayout());
+        cardLayout2 = (CardLayout)(transactionSplit.getLayout());
+        cardLayout.show(panelDisplay, "cardHome");
     }
- private void setupCardLayout() {
-    cl = new CardLayout();
-    panelDisplay.setLayout(cl);
-
-    incomePanel.add(new JLabel("Ini halaman Income"));
-    expensePanel.add(new JLabel("Ini halaman Expense"));
-    historyPanel.add(new JLabel("Ini halaman History"));
-
-    panelDisplay.add(incomePanel, "income");
-    panelDisplay.add(expensePanel, "expense");
-    panelDisplay.add(historyPanel, "history");
-
-    cl.show(panelDisplay, "income"); 
-}
-
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -48,24 +36,30 @@ public class jframe extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jSplitPane1 = new javax.swing.JSplitPane();
         panelMenu = new javax.swing.JPanel();
-        btnIncome = new javax.swing.JButton();
-        btnExpense = new javax.swing.JButton();
+        btnHome = new javax.swing.JButton();
+        btnTransaction = new javax.swing.JButton();
         btnHistory = new javax.swing.JButton();
         panelDisplay = new javax.swing.JPanel();
+        transactionSplit = new javax.swing.JPanel();
+        panelTransaction = new javax.swing.JPanel();
+        btnToIncome = new javax.swing.JButton();
+        btnToExpense = new javax.swing.JButton();
         incomePanel = new javax.swing.JPanel();
         lblAddIncome = new javax.swing.JLabel();
         fieldValueIncome = new javax.swing.JTextField();
         fieldTimeIncome = new javax.swing.JTextField();
         fieldValueIncome1 = new javax.swing.JTextField();
+        btnBackIncome = new javax.swing.JButton();
         expensePanel = new javax.swing.JPanel();
         lblAddExpense = new javax.swing.JLabel();
         fieldValueExpense = new javax.swing.JTextField();
         fieldTimeExpense = new javax.swing.JTextField();
         fieldExpenseType = new javax.swing.JTextField();
+        btnBackExpense = new javax.swing.JButton();
+        homePanel = new javax.swing.JPanel();
         historyPanel = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,30 +67,30 @@ public class jframe extends javax.swing.JFrame {
 
         panelMenu.setBackground(new java.awt.Color(242, 242, 255));
 
-        btnIncome.setBackground(new java.awt.Color(242, 242, 255));
-        btnIncome.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        btnIncome.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnIncome.setLabel("Income");
-        btnIncome.setMaximumSize(new java.awt.Dimension(120, 55));
-        btnIncome.setMinimumSize(new java.awt.Dimension(120, 55));
-        btnIncome.setPreferredSize(new java.awt.Dimension(150, 55));
-        btnIncome.addActionListener(new java.awt.event.ActionListener() {
+        btnHome.setBackground(new java.awt.Color(242, 242, 255));
+        btnHome.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnHome.setText("Home");
+        btnHome.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnHome.setMaximumSize(new java.awt.Dimension(120, 55));
+        btnHome.setMinimumSize(new java.awt.Dimension(120, 55));
+        btnHome.setPreferredSize(new java.awt.Dimension(150, 55));
+        btnHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIncomeActionPerformed(evt);
+                btnHomeActionPerformed(evt);
             }
         });
 
-        btnExpense.setBackground(new java.awt.Color(242, 242, 255));
-        btnExpense.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        btnExpense.setActionCommand("Expense");
-        btnExpense.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnExpense.setLabel("Expense");
-        btnExpense.setMaximumSize(new java.awt.Dimension(120, 55));
-        btnExpense.setMinimumSize(new java.awt.Dimension(120, 55));
-        btnExpense.setPreferredSize(new java.awt.Dimension(150, 55));
-        btnExpense.addActionListener(new java.awt.event.ActionListener() {
+        btnTransaction.setBackground(new java.awt.Color(242, 242, 255));
+        btnTransaction.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnTransaction.setText("Transaction");
+        btnTransaction.setActionCommand("Expense");
+        btnTransaction.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnTransaction.setMaximumSize(new java.awt.Dimension(120, 55));
+        btnTransaction.setMinimumSize(new java.awt.Dimension(120, 55));
+        btnTransaction.setPreferredSize(new java.awt.Dimension(150, 55));
+        btnTransaction.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExpenseActionPerformed(evt);
+                btnTransactionActionPerformed(evt);
             }
         });
 
@@ -118,31 +112,82 @@ public class jframe extends javax.swing.JFrame {
         panelMenuLayout.setHorizontalGroup(
             panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMenuLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
                 .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnHistory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnExpense, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnIncome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(56, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMenuLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnTransaction, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMenuLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnHistory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelMenuLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(btnHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
-        panelMenuLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnExpense, btnHistory, btnIncome});
+        panelMenuLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnHistory, btnHome, btnTransaction});
 
         panelMenuLayout.setVerticalGroup(
             panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMenuLayout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(btnIncome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(btnExpense, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
+                .addGap(136, 136, 136)
+                .addComponent(btnHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(btnTransaction, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
                 .addComponent(btnHistory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(313, Short.MAX_VALUE))
         );
 
-        jPanel1.add(panelMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 560));
+        jSplitPane1.setLeftComponent(panelMenu);
 
         panelDisplay.setBackground(new java.awt.Color(255, 255, 239));
+        panelDisplay.setLayout(new java.awt.CardLayout());
+
+        transactionSplit.setLayout(new java.awt.CardLayout());
+
+        panelTransaction.setBackground(new java.awt.Color(0, 204, 204));
+
+        btnToIncome.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnToIncome.setText("Income");
+        btnToIncome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnToIncomeActionPerformed(evt);
+            }
+        });
+
+        btnToExpense.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnToExpense.setText("Expense");
+        btnToExpense.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnToExpenseActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelTransactionLayout = new javax.swing.GroupLayout(panelTransaction);
+        panelTransaction.setLayout(panelTransactionLayout);
+        panelTransactionLayout.setHorizontalGroup(
+            panelTransactionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTransactionLayout.createSequentialGroup()
+                .addGap(87, 87, 87)
+                .addComponent(btnToIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 251, Short.MAX_VALUE)
+                .addComponent(btnToExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(157, 157, 157))
+        );
+        panelTransactionLayout.setVerticalGroup(
+            panelTransactionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelTransactionLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(panelTransactionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnToIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnToExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(538, Short.MAX_VALUE))
+        );
+
+        transactionSplit.add(panelTransaction, "cardTransBase");
+        panelTransaction.getAccessibleContext().setAccessibleParent(panelDisplay);
 
         incomePanel.setBackground(new java.awt.Color(255, 231, 231));
 
@@ -167,6 +212,13 @@ public class jframe extends javax.swing.JFrame {
             }
         });
 
+        btnBackIncome.setText("Back");
+        btnBackIncome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackIncomeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout incomePanelLayout = new javax.swing.GroupLayout(incomePanel);
         incomePanel.setLayout(incomePanelLayout);
         incomePanelLayout.setHorizontalGroup(
@@ -178,7 +230,11 @@ public class jframe extends javax.swing.JFrame {
                     .addComponent(lblAddIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fieldTimeIncome, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
                     .addComponent(fieldValueIncome1, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE))
-                .addContainerGap(230, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, incomePanelLayout.createSequentialGroup()
+                .addContainerGap(651, Short.MAX_VALUE)
+                .addComponent(btnBackIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67))
         );
         incomePanelLayout.setVerticalGroup(
             incomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -191,12 +247,16 @@ public class jframe extends javax.swing.JFrame {
                 .addComponent(fieldValueIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addComponent(fieldValueIncome1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(140, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 230, Short.MAX_VALUE)
+                .addComponent(btnBackIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
         );
 
         fieldValueIncome.getAccessibleContext().setAccessibleName("");
         fieldTimeIncome.getAccessibleContext().setAccessibleName("");
         fieldValueIncome1.getAccessibleContext().setAccessibleName("");
+
+        transactionSplit.add(incomePanel, "cardIncome");
 
         expensePanel.setBackground(new java.awt.Color(212, 249, 249));
 
@@ -215,6 +275,13 @@ public class jframe extends javax.swing.JFrame {
             }
         });
 
+        btnBackExpense.setText("Back");
+        btnBackExpense.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackExpenseActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout expensePanelLayout = new javax.swing.GroupLayout(expensePanel);
         expensePanel.setLayout(expensePanelLayout);
         expensePanelLayout.setHorizontalGroup(
@@ -228,7 +295,11 @@ public class jframe extends javax.swing.JFrame {
                             .addComponent(fieldExpenseType, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
                             .addComponent(fieldValueExpense, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(fieldTimeExpense, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addContainerGap(242, Short.MAX_VALUE))))
+                        .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, expensePanelLayout.createSequentialGroup()
+                .addContainerGap(645, Short.MAX_VALUE)
+                .addComponent(btnBackExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67))
         );
         expensePanelLayout.setVerticalGroup(
             expensePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -241,67 +312,53 @@ public class jframe extends javax.swing.JFrame {
                 .addComponent(fieldTimeExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addComponent(fieldExpenseType, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnBackExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(66, 66, 66))
         );
 
-        historyPanel.setBackground(new java.awt.Color(234, 255, 234));
+        transactionSplit.add(expensePanel, "cardExpense");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        panelDisplay.add(transactionSplit, "cardTransaction");
+        transactionSplit.getAccessibleContext().setAccessibleParent(panelDisplay);
+
+        homePanel.setBackground(new java.awt.Color(214, 228, 228));
+        homePanel.setToolTipText("");
+        homePanel.setRequestFocusEnabled(false);
+
+        javax.swing.GroupLayout homePanelLayout = new javax.swing.GroupLayout(homePanel);
+        homePanel.setLayout(homePanelLayout);
+        homePanelLayout.setHorizontalGroup(
+            homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 827, Short.MAX_VALUE)
+        );
+        homePanelLayout.setVerticalGroup(
+            homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 668, Short.MAX_VALUE)
+        );
+
+        panelDisplay.add(homePanel, "cardHome");
+        homePanel.getAccessibleContext().setAccessibleName("");
+        homePanel.getAccessibleContext().setAccessibleParent(panelDisplay);
+
+        historyPanel.setBackground(new java.awt.Color(234, 255, 234));
 
         javax.swing.GroupLayout historyPanelLayout = new javax.swing.GroupLayout(historyPanel);
         historyPanel.setLayout(historyPanelLayout);
         historyPanelLayout.setHorizontalGroup(
             historyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, historyPanelLayout.createSequentialGroup()
-                .addContainerGap(153, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
+            .addGap(0, 827, Short.MAX_VALUE)
         );
         historyPanelLayout.setVerticalGroup(
             historyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, historyPanelLayout.createSequentialGroup()
-                .addContainerGap(125, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64))
+            .addGap(0, 668, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout panelDisplayLayout = new javax.swing.GroupLayout(panelDisplay);
-        panelDisplay.setLayout(panelDisplayLayout);
-        panelDisplayLayout.setHorizontalGroup(
-            panelDisplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelDisplayLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(incomePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(panelDisplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(historyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(panelDisplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(expensePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        panelDisplayLayout.setVerticalGroup(
-            panelDisplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelDisplayLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(incomePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(panelDisplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(historyPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(panelDisplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(expensePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        panelDisplay.add(historyPanel, "cardHistory");
 
-        jPanel1.add(panelDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 620, 560));
+        jSplitPane1.setRightComponent(panelDisplay);
+
+        jPanel1.add(jSplitPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -311,26 +368,26 @@ public class jframe extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 646, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnIncomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIncomeActionPerformed
+    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
         // TODO add your handling code here:
-        cl.show(panelDisplay, "income");
-    }//GEN-LAST:event_btnIncomeActionPerformed
+        cardLayout.show(panelDisplay, "cardHome");
+    }//GEN-LAST:event_btnHomeActionPerformed
 
     private void btnHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistoryActionPerformed
         // TODO add your handling code here:
-        cl.show(panelDisplay, "history");
+       cardLayout.show(panelDisplay, "cardHistory");
     }//GEN-LAST:event_btnHistoryActionPerformed
 
-    private void btnExpenseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExpenseActionPerformed
+    private void btnTransactionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransactionActionPerformed
         // TODO add your handling code here:
-        cl.show(panelDisplay, "expense");
-    }//GEN-LAST:event_btnExpenseActionPerformed
+        cardLayout.show(panelDisplay, "cardTransaction");
+    }//GEN-LAST:event_btnTransactionActionPerformed
 
     private void fieldExpenseTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldExpenseTypeActionPerformed
         // TODO add your handling code here:
@@ -351,6 +408,26 @@ public class jframe extends javax.swing.JFrame {
     private void fieldTimeIncomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldTimeIncomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fieldTimeIncomeActionPerformed
+
+    private void btnToIncomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnToIncomeActionPerformed
+        // TODO add your handling code here:
+        cardLayout2.show(transactionSplit, "cardIncome");
+    }//GEN-LAST:event_btnToIncomeActionPerformed
+
+    private void btnBackIncomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackIncomeActionPerformed
+        // TODO add your handling code here:
+        cardLayout2.show(transactionSplit, "cardTransBase");
+    }//GEN-LAST:event_btnBackIncomeActionPerformed
+
+    private void btnBackExpenseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackExpenseActionPerformed
+        // TODO add your handling code here:
+        cardLayout2.show(transactionSplit, "cardTransBase");
+    }//GEN-LAST:event_btnBackExpenseActionPerformed
+
+    private void btnToExpenseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnToExpenseActionPerformed
+        // TODO add your handling code here:
+           cardLayout2.show(transactionSplit, "cardExpense");
+    }//GEN-LAST:event_btnToExpenseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -388,9 +465,13 @@ public class jframe extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnExpense;
+    private javax.swing.JButton btnBackExpense;
+    private javax.swing.JButton btnBackIncome;
     public javax.swing.JButton btnHistory;
-    public javax.swing.JButton btnIncome;
+    public javax.swing.JButton btnHome;
+    private javax.swing.JButton btnToExpense;
+    private javax.swing.JButton btnToIncome;
+    public javax.swing.JButton btnTransaction;
     private javax.swing.JPanel expensePanel;
     private javax.swing.JTextField fieldExpenseType;
     private javax.swing.JTextField fieldTimeExpense;
@@ -399,13 +480,15 @@ public class jframe extends javax.swing.JFrame {
     private javax.swing.JTextField fieldValueIncome;
     private javax.swing.JTextField fieldValueIncome1;
     private javax.swing.JPanel historyPanel;
+    private javax.swing.JPanel homePanel;
     private javax.swing.JPanel incomePanel;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JLabel lblAddExpense;
     private javax.swing.JLabel lblAddIncome;
     public javax.swing.JPanel panelDisplay;
     private javax.swing.JPanel panelMenu;
+    private javax.swing.JPanel panelTransaction;
+    private javax.swing.JPanel transactionSplit;
     // End of variables declaration//GEN-END:variables
 }

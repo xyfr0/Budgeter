@@ -11,6 +11,6 @@ package com.mycompany.budgeter;
 public class Budgeter {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        System.out.println("Tes");
     }
 }
