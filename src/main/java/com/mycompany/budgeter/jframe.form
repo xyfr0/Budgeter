@@ -3,6 +3,7 @@
 <Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -51,7 +52,7 @@
             <Container class="javax.swing.JPanel" name="panelMenu">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="f2" red="f2" type="rgb"/>
+                  <Color blue="ea" green="fa" red="fa" type="rgb"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -63,36 +64,27 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace pref="29" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="btnTransaction" linkSize="1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="btnHistory" linkSize="1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                                  <Component id="btnHome" linkSize="1" max="32767" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="btnTransaction" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnHistory" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnHome" linkSize="1" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
                           <Component id="btnHome" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                           <Component id="btnTransaction" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                           <Component id="btnHistory" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="313" max="32767" attributes="0"/>
+                          <EmptySpace pref="346" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -101,17 +93,16 @@
                 <Component class="javax.swing.JButton" name="btnHome">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="f2" red="f2" type="rgb"/>
+                      <Color blue="ea" green="fa" red="fa" type="rgb"/>
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="24" style="0"/>
+                      <Font name="Serif" size="30" style="0"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Home"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
-                        <BevelBorder/>
-                      </Border>
+                      <Border info="null"/>
                     </Property>
+                    <Property name="horizontalAlignment" type="int" value="2"/>
                     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[120, 55]"/>
                     </Property>
@@ -132,18 +123,17 @@
                 <Component class="javax.swing.JButton" name="btnTransaction">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="f2" red="f2" type="rgb"/>
+                      <Color blue="ea" green="fa" red="fa" type="rgb"/>
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="24" style="0"/>
+                      <Font name="Serif" size="30" style="0"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Transaction"/>
                     <Property name="actionCommand" type="java.lang.String" value="Expense"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
-                        <BevelBorder/>
-                      </Border>
+                      <Border info="null"/>
                     </Property>
+                    <Property name="horizontalAlignment" type="int" value="2"/>
                     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[120, 55]"/>
                     </Property>
@@ -164,16 +154,15 @@
                 <Component class="javax.swing.JButton" name="btnHistory">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="f2" red="f2" type="rgb"/>
+                      <Color blue="ea" green="fa" red="fa" type="rgb"/>
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="24" style="0"/>
+                      <Font name="Serif" size="30" style="0"/>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
-                        <BevelBorder/>
-                      </Border>
+                      <Border info="null"/>
                     </Property>
+                    <Property name="horizontalAlignment" type="int" value="2"/>
                     <Property name="label" type="java.lang.String" value="History"/>
                     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[120, 55]"/>
@@ -228,7 +217,7 @@
                     <Container class="javax.swing.JPanel" name="panelTransaction">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="cc" green="cc" red="0" type="rgb"/>
+                          <Color blue="e7" green="f3" red="f3" type="rgb"/>
                         </Property>
                       </Properties>
                       <AccessibilityProperties>
@@ -246,9 +235,9 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
                                   <Component id="btnToIncome" min="-2" pref="167" max="-2" attributes="0"/>
-                                  <EmptySpace pref="251" max="32767" attributes="0"/>
+                                  <EmptySpace pref="235" max="32767" attributes="0"/>
                                   <Component id="btnToExpense" min="-2" pref="165" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
                               </Group>
@@ -271,7 +260,7 @@
                         <Component class="javax.swing.JButton" name="btnToIncome">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI" size="18" style="0"/>
+                              <Font name="Serif" size="24" style="0"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Income"/>
                           </Properties>
@@ -282,7 +271,7 @@
                         <Component class="javax.swing.JButton" name="btnToExpense">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI" size="18" style="0"/>
+                              <Font name="Serif" size="24" style="0"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Expense"/>
                           </Properties>
@@ -295,7 +284,7 @@
                     <Container class="javax.swing.JPanel" name="incomePanel">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="e7" green="e7" red="ff" type="rgb"/>
+                          <Color blue="e7" green="f3" red="f3" type="rgb"/>
                         </Property>
                       </Properties>
                       <Constraints>
@@ -309,18 +298,23 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="fieldValueIncome" pref="333" max="32767" attributes="0"/>
-                                      <Component id="lblAddIncome" min="-2" pref="123" max="-2" attributes="0"/>
-                                      <Component id="fieldTimeIncome" alignment="0" pref="333" max="32767" attributes="0"/>
-                                      <Component id="fieldValueIncome1" alignment="0" pref="333" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="btnSubmitIncome" min="-2" pref="109" max="-2" attributes="0"/>
+                                          <EmptySpace pref="551" max="32767" attributes="0"/>
+                                          <Component id="btnBackIncome" min="-2" pref="109" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="fieldValueIncome" pref="333" max="32767" attributes="0"/>
+                                              <Component id="lblAddIncome" min="-2" pref="123" max="-2" attributes="0"/>
+                                              <Component id="fieldTimeIncome" alignment="0" pref="333" max="32767" attributes="0"/>
+                                              <Component id="fieldValueIncome1" alignment="0" pref="333" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace pref="651" max="32767" attributes="0"/>
-                                  <Component id="btnBackIncome" min="-2" pref="109" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -335,9 +329,12 @@
                                   <Component id="fieldValueIncome" min="-2" pref="40" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                                   <Component id="fieldValueIncome1" min="-2" pref="40" max="-2" attributes="0"/>
-                                  <EmptySpace pref="230" max="32767" attributes="0"/>
-                                  <Component id="btnBackIncome" min="-2" pref="35" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                  <EmptySpace pref="228" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="btnBackIncome" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="btnSubmitIncome" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -346,7 +343,7 @@
                         <Component class="javax.swing.JLabel" name="lblAddIncome">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI Emoji" size="18" style="1"/>
+                              <Font name="Serif" size="24" style="0"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Add Income"/>
                           </Properties>
@@ -377,10 +374,24 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="btnBackIncome">
                           <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Serif" size="24" style="1"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="Back"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackIncomeActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JButton" name="btnSubmitIncome">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Serif" size="24" style="1"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Submit"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSubmitIncomeActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -388,7 +399,7 @@
                     <Container class="javax.swing.JPanel" name="expensePanel">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="f9" green="f9" red="d4" type="rgb"/>
+                          <Color blue="e7" green="f3" red="f3" type="rgb"/>
                         </Property>
                       </Properties>
                       <Constraints>
@@ -410,14 +421,15 @@
                                               <Component id="fieldValueExpense" alignment="0" max="32767" attributes="0"/>
                                               <Component id="fieldTimeExpense" alignment="0" max="32767" attributes="0"/>
                                           </Group>
+                                          <EmptySpace pref="503" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="btnSubmitExpense" min="-2" pref="115" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="btnBackExpense" min="-2" pref="115" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace pref="645" max="32767" attributes="0"/>
-                                  <Component id="btnBackExpense" min="-2" pref="115" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -432,9 +444,12 @@
                                   <Component id="fieldTimeExpense" min="-2" pref="48" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                                   <Component id="fieldExpenseType" min="-2" pref="49" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="btnBackExpense" min="-2" pref="38" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                                  <EmptySpace pref="209" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="btnSubmitExpense" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Component id="btnBackExpense" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -443,7 +458,7 @@
                         <Component class="javax.swing.JLabel" name="lblAddExpense">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI Emoji" size="18" style="1"/>
+                              <Font name="Serif" size="24" style="0"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Add Expense"/>
                           </Properties>
@@ -460,8 +475,22 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fieldExpenseTypeActionPerformed"/>
                           </Events>
                         </Component>
+                        <Component class="javax.swing.JButton" name="btnSubmitExpense">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Serif" size="24" style="1"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Submit"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSubmitExpenseActionPerformed"/>
+                          </Events>
+                        </Component>
                         <Component class="javax.swing.JButton" name="btnBackExpense">
                           <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Serif" size="24" style="1"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="Back"/>
                           </Properties>
                           <Events>
@@ -475,7 +504,7 @@
                 <Container class="javax.swing.JPanel" name="homePanel">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="e4" green="e4" red="d6" type="rgb"/>
+                      <Color blue="e7" green="f3" red="f3" type="rgb"/>
                     </Property>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="requestFocusEnabled" type="boolean" value="false"/>
@@ -495,20 +524,102 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="827" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
+                                      <Component id="jScrollPane1" min="-2" pref="629" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="267" max="-2" attributes="0"/>
+                                      <Component id="lblHomePanel" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace pref="128" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="668" max="32767" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                              <Component id="lblHomePanel" pref="73" max="32767" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jScrollPane1" min="-2" pref="493" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
+                  <SubComponents>
+                    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+                      <AuxValues>
+                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                      </AuxValues>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTable" name="homeTabel">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Serif" size="18" style="0"/>
+                            </Property>
+                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                              <Table columnCount="4" rowCount="4">
+                                <Column editable="true" title="ID" type="java.lang.Object"/>
+                                <Column editable="true" title="Tanggal" type="java.lang.Object"/>
+                                <Column editable="true" title="Detail" type="java.lang.Object"/>
+                                <Column editable="true" title="Jumlah" type="java.lang.Object"/>
+                              </Table>
+                            </Property>
+                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                              <TableColumnModel selectionModel="0">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                              </TableColumnModel>
+                            </Property>
+                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Component class="javax.swing.JLabel" name="lblHomePanel">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="99" green="ff" red="99" type="rgb"/>
+                        </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Serif" size="36" style="0"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="History Bulan Sekarang"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
                 </Container>
                 <Container class="javax.swing.JPanel" name="historyPanel">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ea" green="ff" red="ea" type="rgb"/>
+                      <Color blue="e7" green="f3" red="f3" type="rgb"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -520,15 +631,67 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="827" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
+                                      <Component id="jScrollPane2" min="-2" pref="629" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="355" max="-2" attributes="0"/>
+                                      <Component id="lblHistoryPanel" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace pref="128" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="668" max="32767" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                              <Component id="lblHistoryPanel" pref="50" max="32767" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jScrollPane2" min="-2" pref="493" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
+                  <SubComponents>
+                    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+                      <AuxValues>
+                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                      </AuxValues>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTable" name="historyTabel">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Serif" size="18" style="0"/>
+                            </Property>
+                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                              <Table columnCount="4" rowCount="4">
+                                <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                                <Column editable="true" title="Title 2" type="java.lang.Object"/>
+                                <Column editable="true" title="Title 3" type="java.lang.Object"/>
+                                <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                              </Table>
+                            </Property>
+                          </Properties>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Component class="javax.swing.JLabel" name="lblHistoryPanel">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Serif" size="36" style="0"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="All History"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
                 </Container>
               </SubComponents>
             </Container>
