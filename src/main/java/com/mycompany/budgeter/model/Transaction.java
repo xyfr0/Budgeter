@@ -76,9 +76,4 @@ private String category;
     }
 }
 
-enum TransactionType {
-INCOME,
-EXPENSE
-}
-
 
