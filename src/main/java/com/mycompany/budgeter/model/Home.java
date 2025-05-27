@@ -1,4 +1,4 @@
-package com.mycompany.budgeter;
+package com.mycompany.budgeter.model;
 
 import java.time.LocalDateTime;
 import java.util.List;
