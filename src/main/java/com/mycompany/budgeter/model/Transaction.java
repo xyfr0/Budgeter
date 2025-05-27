@@ -4,6 +4,8 @@ package com.mycompany.budgeter.model;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
+import java.time.LocalDateTime;
+
 /**
  *
  * @author MSIG6
