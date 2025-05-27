@@ -1,15 +1,17 @@
+package com.mycompany.budgeter.model;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.budgeter.model;
 
 import java.time.LocalDateTime;
 
 /**
  *
- * @author jabba
+ * @author MSIG6
  */
+import java.time.LocalDateTime;
+
 public class Transaction {
 private int id;
 private double amount;
@@ -75,3 +77,5 @@ private String category;
         this.category = category;
     }
 }
+
+
