@@ -20,6 +20,7 @@ public class jframe extends javax.swing.JFrame {
      */
     CardLayout cardLayout;
     CardLayout cardLayout2;
+    int id = 001;
     
     public jframe() {
         initComponents();
@@ -82,14 +83,13 @@ public class jframe extends javax.swing.JFrame {
         btnDeleteRow = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelMenu.setBackground(new java.awt.Color(250, 250, 234));
 
         btnHome.setBackground(new java.awt.Color(250, 250, 234));
-        btnHome.setFont(new java.awt.Font("Serif", 0, 30)); // NOI18N
+        btnHome.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 24)); // NOI18N
         btnHome.setText("Home");
         btnHome.setBorder(null);
         btnHome.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -103,7 +103,7 @@ public class jframe extends javax.swing.JFrame {
         });
 
         btnTransaction.setBackground(new java.awt.Color(250, 250, 234));
-        btnTransaction.setFont(new java.awt.Font("Serif", 0, 30)); // NOI18N
+        btnTransaction.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 24)); // NOI18N
         btnTransaction.setText("Transaction");
         btnTransaction.setActionCommand("Expense");
         btnTransaction.setBorder(null);
@@ -118,7 +118,7 @@ public class jframe extends javax.swing.JFrame {
         });
 
         btnHistory.setBackground(new java.awt.Color(250, 250, 234));
-        btnHistory.setFont(new java.awt.Font("Serif", 0, 30)); // NOI18N
+        btnHistory.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 24)); // NOI18N
         btnHistory.setBorder(null);
         btnHistory.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnHistory.setLabel("History");
@@ -131,7 +131,7 @@ public class jframe extends javax.swing.JFrame {
             }
         });
 
-        lblBalance.setFont(new java.awt.Font("Serif", 2, 24)); // NOI18N
+        lblBalance.setFont(new java.awt.Font("Microsoft Sans Serif", 2, 24)); // NOI18N
         lblBalance.setText("Balance :");
 
         javax.swing.GroupLayout panelMenuLayout = new javax.swing.GroupLayout(panelMenu);
@@ -161,7 +161,7 @@ public class jframe extends javax.swing.JFrame {
                 .addComponent(btnHistory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(115, 115, 115)
                 .addComponent(lblBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(191, Short.MAX_VALUE))
+                .addContainerGap(208, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(panelMenu);
@@ -173,7 +173,7 @@ public class jframe extends javax.swing.JFrame {
 
         panelTransaction.setBackground(new java.awt.Color(243, 243, 231));
 
-        btnToIncome.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
+        btnToIncome.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 24)); // NOI18N
         btnToIncome.setText("Income");
         btnToIncome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -181,7 +181,7 @@ public class jframe extends javax.swing.JFrame {
             }
         });
 
-        btnToExpense.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
+        btnToExpense.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 24)); // NOI18N
         btnToExpense.setText("Expense");
         btnToExpense.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -207,7 +207,7 @@ public class jframe extends javax.swing.JFrame {
                 .addGroup(panelTransactionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnToIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnToExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(410, Short.MAX_VALUE))
+                .addContainerGap(427, Short.MAX_VALUE))
         );
 
         transactionSplit.add(panelTransaction, "cardTransBase");
@@ -215,28 +215,31 @@ public class jframe extends javax.swing.JFrame {
 
         incomePanel.setBackground(new java.awt.Color(243, 243, 231));
 
-        lblAddIncome.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
+        lblAddIncome.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 26)); // NOI18N
         lblAddIncome.setText("Add Income");
 
+        txtTimeIncome.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 20)); // NOI18N
         txtTimeIncome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTimeIncomeActionPerformed(evt);
             }
         });
 
+        txtValueIncome.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 20)); // NOI18N
         txtValueIncome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtValueIncomeActionPerformed(evt);
             }
         });
 
+        txtDetailIncome.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 20)); // NOI18N
         txtDetailIncome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDetailIncomeActionPerformed(evt);
             }
         });
 
-        btnBackIncome.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
+        btnBackIncome.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
         btnBackIncome.setText("Back");
         btnBackIncome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -244,7 +247,7 @@ public class jframe extends javax.swing.JFrame {
             }
         });
 
-        btnSubmitIncome.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
+        btnSubmitIncome.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
         btnSubmitIncome.setText("Submit");
         btnSubmitIncome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -252,13 +255,13 @@ public class jframe extends javax.swing.JFrame {
             }
         });
 
-        lblTimeIncome.setFont(new java.awt.Font("Serif", 0, 20)); // NOI18N
+        lblTimeIncome.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 20)); // NOI18N
         lblTimeIncome.setText("Time Income");
 
-        lblValueIncome.setFont(new java.awt.Font("Serif", 0, 20)); // NOI18N
+        lblValueIncome.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 20)); // NOI18N
         lblValueIncome.setText("Value Income");
 
-        lblDetailIncome.setFont(new java.awt.Font("Serif", 0, 20)); // NOI18N
+        lblDetailIncome.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 20)); // NOI18N
         lblDetailIncome.setText("Detail Income");
 
         javax.swing.GroupLayout incomePanelLayout = new javax.swing.GroupLayout(incomePanel);
@@ -269,22 +272,21 @@ public class jframe extends javax.swing.JFrame {
                 .addGap(45, 45, 45)
                 .addGroup(incomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(incomePanelLayout.createSequentialGroup()
-                        .addComponent(btnSubmitIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 551, Short.MAX_VALUE)
-                        .addComponent(btnBackIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSubmitIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 539, Short.MAX_VALUE)
+                        .addComponent(btnBackIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(67, 67, 67))
                     .addGroup(incomePanelLayout.createSequentialGroup()
-                        .addGroup(incomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtValueIncome, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
-                            .addComponent(lblAddIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTimeIncome, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
-                            .addComponent(txtDetailIncome, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(incomePanelLayout.createSequentialGroup()
                         .addGroup(incomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblDetailIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblValueIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblTimeIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(incomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtValueIncome)
+                                .addComponent(txtTimeIncome)
+                                .addComponent(txtDetailIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblDetailIncome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(incomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(lblValueIncome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
+                                .addComponent(lblTimeIncome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE))
+                            .addComponent(lblAddIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         incomePanelLayout.setVerticalGroup(
@@ -292,7 +294,7 @@ public class jframe extends javax.swing.JFrame {
             .addGroup(incomePanelLayout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(lblAddIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(30, 30, 30)
                 .addComponent(lblTimeIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTimeIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -300,15 +302,15 @@ public class jframe extends javax.swing.JFrame {
                 .addComponent(lblValueIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtValueIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblDetailIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtDetailIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 222, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
                 .addGroup(incomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBackIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSubmitIncome))
-                .addGap(40, 40, 40))
+                    .addComponent(btnBackIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSubmitIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(77, 77, 77))
         );
 
         txtTimeIncome.getAccessibleContext().setAccessibleName("");
@@ -319,28 +321,31 @@ public class jframe extends javax.swing.JFrame {
 
         expensePanel.setBackground(new java.awt.Color(243, 243, 231));
 
-        lblAddExpense.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
+        lblAddExpense.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 26)); // NOI18N
         lblAddExpense.setText("Add Expense");
 
+        txtTimeExpense.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 20)); // NOI18N
         txtTimeExpense.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTimeExpenseActionPerformed(evt);
             }
         });
 
+        txtValueExpense.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 20)); // NOI18N
         txtValueExpense.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtValueExpenseActionPerformed(evt);
             }
         });
 
+        txtDetailExpense.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 20)); // NOI18N
         txtDetailExpense.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDetailExpenseActionPerformed(evt);
             }
         });
 
-        btnSubmitExpense.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
+        btnSubmitExpense.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
         btnSubmitExpense.setText("Submit");
         btnSubmitExpense.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -348,7 +353,7 @@ public class jframe extends javax.swing.JFrame {
             }
         });
 
-        btnBackExpense.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
+        btnBackExpense.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
         btnBackExpense.setText("Back");
         btnBackExpense.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -356,14 +361,14 @@ public class jframe extends javax.swing.JFrame {
             }
         });
 
-        lblTimeExpense.setFont(new java.awt.Font("Serif", 0, 20)); // NOI18N
+        lblTimeExpense.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 20)); // NOI18N
         lblTimeExpense.setText("Time Expense");
 
-        lblValueExpense.setFont(new java.awt.Font("Serif", 0, 20)); // NOI18N
+        lblValueExpense.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 20)); // NOI18N
         lblValueExpense.setText("Value Expense");
 
-        lblDetailExpense.setFont(new java.awt.Font("Serif", 0, 20)); // NOI18N
-        lblDetailExpense.setText("Detail Income");
+        lblDetailExpense.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 20)); // NOI18N
+        lblDetailExpense.setText("Detail Expense");
 
         javax.swing.GroupLayout expensePanelLayout = new javax.swing.GroupLayout(expensePanel);
         expensePanel.setLayout(expensePanelLayout);
@@ -372,7 +377,6 @@ public class jframe extends javax.swing.JFrame {
             .addGroup(expensePanelLayout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addGroup(expensePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblAddExpense, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(expensePanelLayout.createSequentialGroup()
                         .addComponent(btnSubmitExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -380,6 +384,7 @@ public class jframe extends javax.swing.JFrame {
                         .addGap(45, 45, 45))
                     .addGroup(expensePanelLayout.createSequentialGroup()
                         .addGroup(expensePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(lblAddExpense, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblTimeExpense, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblValueExpense, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblDetailExpense, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -393,23 +398,23 @@ public class jframe extends javax.swing.JFrame {
             .addGroup(expensePanelLayout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(lblAddExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
+                .addGap(30, 30, 30)
                 .addComponent(lblTimeExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtValueExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtValueExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblValueExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtTimeExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtTimeExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblDetailExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtDetailExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 197, Short.MAX_VALUE)
+                .addComponent(txtDetailExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 154, Short.MAX_VALUE)
                 .addGroup(expensePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSubmitExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBackExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34))
+                .addGap(77, 77, 77))
         );
 
         transactionSplit.add(expensePanel, "cardExpense");
@@ -421,7 +426,7 @@ public class jframe extends javax.swing.JFrame {
         homePanel.setToolTipText("");
         homePanel.setRequestFocusEnabled(false);
 
-        homeTabel.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
+        homeTabel.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
         homeTabel.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -444,14 +449,14 @@ public class jframe extends javax.swing.JFrame {
         jScrollPane1.setViewportView(homeTabel);
 
         lblHomePanel.setBackground(new java.awt.Color(153, 255, 153));
-        lblHomePanel.setFont(new java.awt.Font("Serif", 0, 36)); // NOI18N
+        lblHomePanel.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 24)); // NOI18N
         lblHomePanel.setText("History Bulan Sekarang");
 
-        jLabel1.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 24)); // NOI18N
         jLabel1.setText("Total Expense : ");
         jLabel1.setToolTipText("");
 
-        jLabel2.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 24)); // NOI18N
         jLabel2.setText("Total Income : ");
         jLabel2.setToolTipText("");
 
@@ -468,8 +473,8 @@ public class jframe extends javax.swing.JFrame {
                         .addGap(124, 124, 124)
                         .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(homePanelLayout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(222, 222, 222)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(199, 199, 199)
                                 .addComponent(jLabel1))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(127, Short.MAX_VALUE))
@@ -477,15 +482,15 @@ public class jframe extends javax.swing.JFrame {
         homePanelLayout.setVerticalGroup(
             homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homePanelLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(lblHomePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(21, 21, 21)
+                .addComponent(lblHomePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
                 .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
-                .addGap(14, 14, 14))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
 
         panelDisplay.add(homePanel, "cardHome");
@@ -504,10 +509,10 @@ public class jframe extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, true, true, true
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -519,12 +524,19 @@ public class jframe extends javax.swing.JFrame {
             }
         });
         jScrollPane2.setViewportView(historyTabel);
+        if (historyTabel.getColumnModel().getColumnCount() > 0) {
+            historyTabel.getColumnModel().getColumn(0).setResizable(false);
+            historyTabel.getColumnModel().getColumn(1).setResizable(false);
+            historyTabel.getColumnModel().getColumn(2).setResizable(false);
+            historyTabel.getColumnModel().getColumn(3).setResizable(false);
+            historyTabel.getColumnModel().getColumn(4).setResizable(false);
+        }
 
-        lblHistoryPanel.setFont(new java.awt.Font("Serif", 0, 36)); // NOI18N
+        lblHistoryPanel.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 30)); // NOI18N
         lblHistoryPanel.setText("All History");
 
-        btnDeleteRow.setFont(new java.awt.Font("Serif", 0, 30)); // NOI18N
-        btnDeleteRow.setText("Delete");
+        btnDeleteRow.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 28)); // NOI18N
+        btnDeleteRow.setText(" Delete Row");
         btnDeleteRow.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteRowActionPerformed(evt);
@@ -543,20 +555,20 @@ public class jframe extends javax.swing.JFrame {
                     .addGroup(historyPanelLayout.createSequentialGroup()
                         .addGap(124, 124, 124)
                         .addGroup(historyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnDeleteRow, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 615, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 615, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnDeleteRow))))
                 .addContainerGap(142, Short.MAX_VALUE))
         );
         historyPanelLayout.setVerticalGroup(
             historyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, historyPanelLayout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(lblHistoryPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                .addComponent(lblHistoryPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(btnDeleteRow, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47))
+                .addGap(42, 42, 42)
+                .addComponent(btnDeleteRow, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55))
         );
 
         panelDisplay.add(historyPanel, "cardHistory");
@@ -626,6 +638,20 @@ public class jframe extends javax.swing.JFrame {
 
     private void btnSubmitExpenseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitExpenseActionPerformed
         // TODO add your handling code here:
+        if (txtTimeExpense.getText().equals("")|| txtValueExpense.getText().equals("")||txtDetailExpense.getText().equals("")){
+            JOptionPane.showMessageDialog(this, "Pastikan masukkan seluruh data");
+        }else{
+            String data[] = {Integer.toString(id),
+                txtTimeExpense.getText(),
+                "Expense", 
+                txtValueExpense.getText(),
+                txtDetailExpense.getText()};
+            DefaultTableModel historyAll = (DefaultTableModel) historyTabel.getModel();
+            historyAll.addRow(data);
+            JOptionPane.showMessageDialog(this, "Data added ! ");
+            txtDetailExpense.setText(""); txtTimeExpense.setText(""); txtValueExpense.setText("");
+            id++;
+        }
     }//GEN-LAST:event_btnSubmitExpenseActionPerformed
 
     private void btnToExpenseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnToExpenseActionPerformed
@@ -643,11 +669,17 @@ public class jframe extends javax.swing.JFrame {
         if (txtTimeIncome.getText().equals("")|| txtValueIncome.getText().equals("")||txtDetailIncome.getText().equals("")){
             JOptionPane.showMessageDialog(this, "Pastikan masukkan seluruh data");
         }else{
-            String data[] = {txtTimeIncome.getText(),txtValueIncome.getText(),txtDetailIncome.getText()};
+            String data[] = {Integer.toString(id),
+                txtTimeIncome.getText(),
+                "Income",
+                txtValueIncome.getText(),
+                txtDetailIncome.getText()};
+            
             DefaultTableModel historyAll = (DefaultTableModel) historyTabel.getModel();
             historyAll.addRow(data);
             JOptionPane.showMessageDialog(this, "Data added ! ");
             txtDetailIncome.setText(""); txtTimeIncome.setText(""); txtValueIncome.setText("");
+            id++;
         }
     }//GEN-LAST:event_btnSubmitIncomeActionPerformed
 
