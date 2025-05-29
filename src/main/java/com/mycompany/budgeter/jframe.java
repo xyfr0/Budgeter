@@ -26,7 +26,7 @@ public class jframe extends javax.swing.JFrame {
         initComponents();
         cardLayout = (CardLayout)(panelDisplay.getLayout());
         cardLayout2 = (CardLayout)(transactionSplit.getLayout());
-        cardLayout.show(panelDisplay, "cardHome");
+        cardLayout.show(panelDisplay, "cardTransaction");
     }
     
     /**
@@ -41,7 +41,6 @@ public class jframe extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jSplitPane1 = new javax.swing.JSplitPane();
         panelMenu = new javax.swing.JPanel();
-        btnHome = new javax.swing.JButton();
         btnTransaction = new javax.swing.JButton();
         btnHistory = new javax.swing.JButton();
         lblBalance = new javax.swing.JLabel();
@@ -62,20 +61,14 @@ public class jframe extends javax.swing.JFrame {
         lblDetailIncome = new javax.swing.JLabel();
         expensePanel = new javax.swing.JPanel();
         lblAddExpense = new javax.swing.JLabel();
-        txtTimeExpense = new javax.swing.JTextField();
         txtValueExpense = new javax.swing.JTextField();
+        txtTimeExpense = new javax.swing.JTextField();
         txtDetailExpense = new javax.swing.JTextField();
         btnSubmitExpense = new javax.swing.JButton();
         btnBackExpense = new javax.swing.JButton();
         lblTimeExpense = new javax.swing.JLabel();
         lblValueExpense = new javax.swing.JLabel();
         lblDetailExpense = new javax.swing.JLabel();
-        homePanel = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        homeTabel = new javax.swing.JTable();
-        lblHomePanel = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         historyPanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         historyTabel = new javax.swing.JTable();
@@ -87,20 +80,6 @@ public class jframe extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelMenu.setBackground(new java.awt.Color(250, 250, 234));
-
-        btnHome.setBackground(new java.awt.Color(250, 250, 234));
-        btnHome.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 24)); // NOI18N
-        btnHome.setText("Home");
-        btnHome.setBorder(null);
-        btnHome.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnHome.setMaximumSize(new java.awt.Dimension(120, 55));
-        btnHome.setMinimumSize(new java.awt.Dimension(120, 55));
-        btnHome.setPreferredSize(new java.awt.Dimension(150, 55));
-        btnHome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHomeActionPerformed(evt);
-            }
-        });
 
         btnTransaction.setBackground(new java.awt.Color(250, 250, 234));
         btnTransaction.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 24)); // NOI18N
@@ -142,24 +121,21 @@ public class jframe extends javax.swing.JFrame {
                 .addContainerGap(29, Short.MAX_VALUE)
                 .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(lblBalance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnTransaction, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnHistory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnTransaction, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnHistory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(21, 21, 21))
         );
 
-        panelMenuLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnHistory, btnHome, btnTransaction});
+        panelMenuLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnHistory, btnTransaction});
 
         panelMenuLayout.setVerticalGroup(
             panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMenuLayout.createSequentialGroup()
-                .addGap(103, 103, 103)
-                .addComponent(btnHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(117, 117, 117)
                 .addComponent(btnTransaction, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(btnHistory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(115, 115, 115)
+                .addGap(183, 183, 183)
                 .addComponent(lblBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(208, Short.MAX_VALUE))
         );
@@ -324,17 +300,17 @@ public class jframe extends javax.swing.JFrame {
         lblAddExpense.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 26)); // NOI18N
         lblAddExpense.setText("Add Expense");
 
-        txtTimeExpense.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 20)); // NOI18N
-        txtTimeExpense.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTimeExpenseActionPerformed(evt);
-            }
-        });
-
         txtValueExpense.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 20)); // NOI18N
         txtValueExpense.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtValueExpenseActionPerformed(evt);
+            }
+        });
+
+        txtTimeExpense.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 20)); // NOI18N
+        txtTimeExpense.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTimeExpenseActionPerformed(evt);
             }
         });
 
@@ -389,8 +365,8 @@ public class jframe extends javax.swing.JFrame {
                             .addComponent(lblValueExpense, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblDetailExpense, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtDetailExpense, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
-                            .addComponent(txtValueExpense, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtTimeExpense, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(txtTimeExpense, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtValueExpense, javax.swing.GroupLayout.Alignment.LEADING))
                         .addContainerGap(503, Short.MAX_VALUE))))
         );
         expensePanelLayout.setVerticalGroup(
@@ -401,11 +377,11 @@ public class jframe extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(lblTimeExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtValueExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtTimeExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblValueExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtTimeExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtValueExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblDetailExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -421,81 +397,6 @@ public class jframe extends javax.swing.JFrame {
 
         panelDisplay.add(transactionSplit, "cardTransaction");
         transactionSplit.getAccessibleContext().setAccessibleParent(panelDisplay);
-
-        homePanel.setBackground(new java.awt.Color(243, 243, 231));
-        homePanel.setToolTipText("");
-        homePanel.setRequestFocusEnabled(false);
-
-        homeTabel.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
-        homeTabel.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Transaction Type", "Amount", "Detail"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Object.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(homeTabel);
-
-        lblHomePanel.setBackground(new java.awt.Color(153, 255, 153));
-        lblHomePanel.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 24)); // NOI18N
-        lblHomePanel.setText("History Bulan Sekarang");
-
-        jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 24)); // NOI18N
-        jLabel1.setText("Total Expense : ");
-        jLabel1.setToolTipText("");
-
-        jLabel2.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 24)); // NOI18N
-        jLabel2.setText("Total Income : ");
-        jLabel2.setToolTipText("");
-
-        javax.swing.GroupLayout homePanelLayout = new javax.swing.GroupLayout(homePanel);
-        homePanel.setLayout(homePanelLayout);
-        homePanelLayout.setHorizontalGroup(
-            homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(homePanelLayout.createSequentialGroup()
-                .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(homePanelLayout.createSequentialGroup()
-                        .addGap(267, 267, 267)
-                        .addComponent(lblHomePanel))
-                    .addGroup(homePanelLayout.createSequentialGroup()
-                        .addGap(124, 124, 124)
-                        .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(homePanelLayout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(199, 199, 199)
-                                .addComponent(jLabel1))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(127, Short.MAX_VALUE))
-        );
-        homePanelLayout.setVerticalGroup(
-            homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homePanelLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(lblHomePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addContainerGap(92, Short.MAX_VALUE))
-        );
-
-        panelDisplay.add(homePanel, "cardHome");
-        homePanel.getAccessibleContext().setAccessibleName("");
-        homePanel.getAccessibleContext().setAccessibleParent(panelDisplay);
 
         historyPanel.setBackground(new java.awt.Color(243, 243, 231));
 
@@ -591,11 +492,6 @@ public class jframe extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
-        // TODO add your handling code here:
-        cardLayout.show(panelDisplay, "cardHome");
-    }//GEN-LAST:event_btnHomeActionPerformed
-
     private void btnHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistoryActionPerformed
         // TODO add your handling code here:
        cardLayout.show(panelDisplay, "cardHistory");
@@ -618,9 +514,9 @@ public class jframe extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDetailIncomeActionPerformed
 
-    private void txtValueExpenseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValueExpenseActionPerformed
+    private void txtTimeExpenseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTimeExpenseActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtValueExpenseActionPerformed
+    }//GEN-LAST:event_txtTimeExpenseActionPerformed
 
     private void txtTimeIncomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTimeIncomeActionPerformed
         // TODO add your handling code here:
@@ -638,18 +534,18 @@ public class jframe extends javax.swing.JFrame {
 
     private void btnSubmitExpenseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitExpenseActionPerformed
         // TODO add your handling code here:
-        if (txtTimeExpense.getText().equals("")|| txtValueExpense.getText().equals("")||txtDetailExpense.getText().equals("")){
+        if (txtValueExpense.getText().equals("")|| txtTimeExpense.getText().equals("")||txtDetailExpense.getText().equals("")){
             JOptionPane.showMessageDialog(this, "Pastikan masukkan seluruh data");
         }else{
             String data[] = {Integer.toString(id),
-                txtTimeExpense.getText(),
-                "Expense", 
                 txtValueExpense.getText(),
+                "Expense", 
+                txtTimeExpense.getText(),
                 txtDetailExpense.getText()};
             DefaultTableModel historyAll = (DefaultTableModel) historyTabel.getModel();
             historyAll.addRow(data);
             JOptionPane.showMessageDialog(this, "Data added ! ");
-            txtDetailExpense.setText(""); txtTimeExpense.setText(""); txtValueExpense.setText("");
+            txtDetailExpense.setText(""); txtValueExpense.setText(""); txtTimeExpense.setText("");
             id++;
         }
     }//GEN-LAST:event_btnSubmitExpenseActionPerformed
@@ -698,9 +594,9 @@ public class jframe extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnDeleteRowActionPerformed
 
-    private void txtTimeExpenseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTimeExpenseActionPerformed
+    private void txtValueExpenseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValueExpenseActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtTimeExpenseActionPerformed
+    }//GEN-LAST:event_txtValueExpenseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -742,7 +638,6 @@ public class jframe extends javax.swing.JFrame {
     private javax.swing.JButton btnBackIncome;
     private javax.swing.JButton btnDeleteRow;
     public javax.swing.JButton btnHistory;
-    public javax.swing.JButton btnHome;
     private javax.swing.JButton btnSubmitExpense;
     private javax.swing.JButton btnSubmitIncome;
     private javax.swing.JButton btnToExpense;
@@ -751,13 +646,8 @@ public class jframe extends javax.swing.JFrame {
     private javax.swing.JPanel expensePanel;
     private javax.swing.JPanel historyPanel;
     private javax.swing.JTable historyTabel;
-    private javax.swing.JPanel homePanel;
-    private javax.swing.JTable homeTabel;
     private javax.swing.JPanel incomePanel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JLabel lblAddExpense;
@@ -766,7 +656,6 @@ public class jframe extends javax.swing.JFrame {
     private javax.swing.JLabel lblDetailExpense;
     private javax.swing.JLabel lblDetailIncome;
     private javax.swing.JLabel lblHistoryPanel;
-    private javax.swing.JLabel lblHomePanel;
     private javax.swing.JLabel lblTimeExpense;
     private javax.swing.JLabel lblTimeIncome;
     private javax.swing.JLabel lblValueExpense;
