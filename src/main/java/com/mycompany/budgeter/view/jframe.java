@@ -38,6 +38,7 @@ public class jframe extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jSplitPane1 = new javax.swing.JSplitPane();
         panelMenu = new javax.swing.JPanel();
@@ -45,6 +46,7 @@ public class jframe extends javax.swing.JFrame {
         btnTransaction = new javax.swing.JButton();
         btnHistory = new javax.swing.JButton();
         lblBalance = new javax.swing.JLabel();
+        lblBalance1 = new javax.swing.JLabel();
         panelDisplay = new javax.swing.JPanel();
         transactionSplit = new javax.swing.JPanel();
         panelTransaction = new javax.swing.JPanel();
@@ -134,17 +136,21 @@ public class jframe extends javax.swing.JFrame {
         lblBalance.setFont(new java.awt.Font("Microsoft Sans Serif", 2, 24)); // NOI18N
         lblBalance.setText("Balance :");
 
+        lblBalance1.setFont(new java.awt.Font("Microsoft Sans Serif", 2, 24)); // NOI18N
+        lblBalance1.setText("Rp9.999.999,0");
+
         javax.swing.GroupLayout panelMenuLayout = new javax.swing.GroupLayout(panelMenu);
         panelMenu.setLayout(panelMenuLayout);
         panelMenuLayout.setHorizontalGroup(
             panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMenuLayout.createSequentialGroup()
-                .addContainerGap(29, Short.MAX_VALUE)
+                .addContainerGap(22, Short.MAX_VALUE)
                 .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(lblBalance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnTransaction, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnHistory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblBalance1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(21, 21, 21))
         );
 
@@ -161,7 +167,9 @@ public class jframe extends javax.swing.JFrame {
                 .addComponent(btnHistory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(115, 115, 115)
                 .addComponent(lblBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(208, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblBalance1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(162, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(panelMenu);
@@ -196,7 +204,7 @@ public class jframe extends javax.swing.JFrame {
             .addGroup(panelTransactionLayout.createSequentialGroup()
                 .addGap(162, 162, 162)
                 .addComponent(btnToIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 235, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 242, Short.MAX_VALUE)
                 .addComponent(btnToExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(152, 152, 152))
         );
@@ -273,7 +281,7 @@ public class jframe extends javax.swing.JFrame {
                 .addGroup(incomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(incomePanelLayout.createSequentialGroup()
                         .addComponent(btnSubmitIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 539, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 546, Short.MAX_VALUE)
                         .addComponent(btnBackIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(67, 67, 67))
                     .addGroup(incomePanelLayout.createSequentialGroup()
@@ -391,7 +399,7 @@ public class jframe extends javax.swing.JFrame {
                             .addComponent(txtDetailExpense, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
                             .addComponent(txtValueExpense, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtTimeExpense, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addContainerGap(503, Short.MAX_VALUE))))
+                        .addContainerGap(510, Short.MAX_VALUE))))
         );
         expensePanelLayout.setVerticalGroup(
             expensePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -477,7 +485,7 @@ public class jframe extends javax.swing.JFrame {
                                 .addGap(199, 199, 199)
                                 .addComponent(jLabel1))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addContainerGap(134, Short.MAX_VALUE))
         );
         homePanelLayout.setVerticalGroup(
             homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -557,7 +565,7 @@ public class jframe extends javax.swing.JFrame {
                         .addGroup(historyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 615, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnDeleteRow))))
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addContainerGap(149, Short.MAX_VALUE))
         );
         historyPanelLayout.setVerticalGroup(
             historyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -585,7 +593,7 @@ public class jframe extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 646, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 646, Short.MAX_VALUE)
         );
 
         pack();
@@ -748,6 +756,7 @@ public class jframe extends javax.swing.JFrame {
     private javax.swing.JButton btnToExpense;
     private javax.swing.JButton btnToIncome;
     public javax.swing.JButton btnTransaction;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JPanel expensePanel;
     private javax.swing.JPanel historyPanel;
     private javax.swing.JTable historyTabel;
@@ -763,6 +772,7 @@ public class jframe extends javax.swing.JFrame {
     private javax.swing.JLabel lblAddExpense;
     private javax.swing.JLabel lblAddIncome;
     private javax.swing.JLabel lblBalance;
+    private javax.swing.JLabel lblBalance1;
     private javax.swing.JLabel lblDetailExpense;
     private javax.swing.JLabel lblDetailIncome;
     private javax.swing.JLabel lblHistoryPanel;
