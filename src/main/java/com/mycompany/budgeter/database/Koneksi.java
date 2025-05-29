@@ -14,11 +14,11 @@ public class Koneksi {
     
     private static Connection koneksi;
     
-    public static Connection getKoneksi() {
+    public static Connection connect() {
         if (koneksi == null) {
             try {
                 String server = "localhost";
-                String database = "Project_Java";
+                String database = "MYMONEY";
                 String user = "sa";
                 String password = "admin1234";
                 String url = "jdbc:sqlserver://" + server + ":1691;databaseName="
