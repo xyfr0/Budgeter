@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -64,12 +68,13 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="29" max="32767" attributes="0"/>
+                          <EmptySpace pref="22" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Component id="lblBalance" max="32767" attributes="0"/>
                               <Component id="btnTransaction" linkSize="1" alignment="1" max="32767" attributes="0"/>
                               <Component id="btnHistory" linkSize="1" alignment="1" max="32767" attributes="0"/>
                               <Component id="btnHome" linkSize="1" alignment="1" max="32767" attributes="0"/>
+                              <Component id="lblBalance1" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                       </Group>
@@ -86,7 +91,9 @@
                           <Component id="btnHistory" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
                           <Component id="lblBalance" min="-2" pref="40" max="-2" attributes="0"/>
-                          <EmptySpace pref="208" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="lblBalance1" min="-2" pref="40" max="-2" attributes="0"/>
+                          <EmptySpace pref="162" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -191,6 +198,14 @@
                     <Property name="text" type="java.lang.String" value="Balance :"/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JLabel" name="lblBalance1">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Microsoft Sans Serif" size="24" style="2"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Rp9.999.999,0"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="panelDisplay">
@@ -247,7 +262,7 @@
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="162" max="-2" attributes="0"/>
                                   <Component id="btnToIncome" min="-2" pref="167" max="-2" attributes="0"/>
-                                  <EmptySpace pref="235" max="32767" attributes="0"/>
+                                  <EmptySpace pref="242" max="32767" attributes="0"/>
                                   <Component id="btnToExpense" min="-2" pref="165" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
                               </Group>
@@ -311,7 +326,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
                                           <Component id="btnSubmitIncome" min="-2" pref="115" max="-2" attributes="0"/>
-                                          <EmptySpace pref="539" max="32767" attributes="0"/>
+                                          <EmptySpace pref="546" max="32767" attributes="0"/>
                                           <Component id="btnBackIncome" min="-2" pref="115" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                                       </Group>
@@ -492,7 +507,7 @@
                                               <Component id="txtValueExpense" alignment="0" max="32767" attributes="0"/>
                                               <Component id="txtTimeExpense" alignment="0" max="32767" attributes="0"/>
                                           </Group>
-                                          <EmptySpace pref="503" max="32767" attributes="0"/>
+                                          <EmptySpace pref="510" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -655,7 +670,7 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="127" max="32767" attributes="0"/>
+                              <EmptySpace pref="134" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -782,7 +797,7 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="142" max="32767" attributes="0"/>
+                              <EmptySpace pref="149" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
