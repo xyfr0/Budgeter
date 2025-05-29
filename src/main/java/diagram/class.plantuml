@@ -38,6 +38,11 @@
       +getBalance() : double
 }
 
++class "Koneksi"{
+      -koneksi : Connection
+      +connect() : Connection
+}
+
 Transaction o-- History
 Transaction --> TransactionType
 

@@ -90,7 +90,7 @@
                           <Component id="btnHistory" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
                           <Component id="lblBalance" min="-2" pref="40" max="-2" attributes="0"/>
-                          <EmptySpace pref="208" max="32767" attributes="0"/>
+                          <EmptySpace pref="217" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -265,7 +265,7 @@
                                       <Component id="btnToIncome" alignment="3" min="-2" pref="99" max="-2" attributes="0"/>
                                       <Component id="btnToExpense" alignment="3" min="-2" pref="102" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="427" max="32767" attributes="0"/>
+                                  <EmptySpace pref="436" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -356,7 +356,7 @@
                                   <Component id="lblDetailIncome" min="-2" pref="38" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="txtDetailIncome" min="-2" pref="40" max="-2" attributes="0"/>
-                                  <EmptySpace pref="158" max="32767" attributes="0"/>
+                                  <EmptySpace pref="182" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="btnBackIncome" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                                       <Component id="btnSubmitIncome" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
@@ -519,7 +519,7 @@
                                   <Component id="lblDetailExpense" min="-2" pref="38" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="txtDetailExpense" min="-2" pref="40" max="-2" attributes="0"/>
-                                  <EmptySpace pref="154" max="32767" attributes="0"/>
+                                  <EmptySpace pref="183" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="btnSubmitExpense" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                                       <Component id="btnBackExpense" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
@@ -675,7 +675,7 @@
                                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="92" max="32767" attributes="0"/>
+                              <EmptySpace pref="101" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -794,7 +794,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                              <Component id="lblHistoryPanel" pref="67" max="32767" attributes="0"/>
+                              <Component id="lblHistoryPanel" pref="76" max="32767" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jScrollPane2" min="-2" pref="414" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
