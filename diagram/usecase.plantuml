@@ -1,0 +1,25 @@
+@startuml usecase
+
+left to right direction
+actor User as u
+package MyMoney{
+      usecase "Input Transaksi" as UC0
+      usecase "Input Pemasukan" as UC1
+      usecase "Input Pengeluaran" as UC2
+      usecase "Hapus Transaksi" as UC22
+      usecase "Hapus Pemasukan" as UC3
+      usecase "Hapus Pengeluaran" as UC4
+      usecase "Lihat History" as UC5      
+}
+
+u --> UC0
+UC0 --> UC1
+UC0 --> UC2
+u --> UC5
+UC5 --> UC22
+UC22 --> UC3
+UC22 --> UC4
+
+
+
+@enduml
