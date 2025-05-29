@@ -1,0 +1,55 @@
+@startuml class
+
+
++class "Transaction"{
+      -id : int
+      -amount : double
+      -date : LocalDateTime
+      -transactionType : String
+      -description : String
+      +Transaction(id : int, amount : double, date: LocalDateTime, transactionType : String, description : String) : Transaction
+      +getAmount() : double
+      +getDate() : LocalDateTime
+      +getCategory() : String
+      +getDescription() : String
+      +getTransactionType(): String
+      +setAmount() : void
+      +setTime() : void
+      +setCategory() : void
+      +setDescription() : void      
+      +setTransactionType(): String
+}
+
++enum "TransactionType"{
+      INCOME
+      EXPENSE
+}
+
++class "Home"{
+      -dateHome : LocalDateTime      
+      +getDateHome() : LocalDateTime
+      +setDateHome() : void
+      +getTransactionHome() : List<Transaction>
+      +getIncomeHome() : double
+      +getExpenseHome() : double
+      +getBalance() : double
+
+}
+
++class "History"{
+      -transactionHistory : List<Transaction>
+      -monthHistory : LocalDate      
+      +getTransactionHistory() : List<Transaction>
+      +setTransactionHistory() : void      
+      +getMonthHistory() : LocalDate
+      +setMonthHistory() : void
+      +getMonthlyTransaction() : List<Transaction>      
+}
+
+Transaction o-- History
+Transaction o-- Home
+Transaction --> TransactionType
+
+
+
+@enduml
