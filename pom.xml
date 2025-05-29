@@ -16,8 +16,8 @@
             <artifactId>sqlite-jdbc</artifactId>
             <version>3.49.1.0</version>
         </dependency>
-    </dependencies> 
-    <properties>        
+    </dependencies>
+    <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>21</maven.compiler.release>
         <exec.mainClass>com.mycompany.budgeter.Budgeter</exec.mainClass>
