@@ -12,10 +12,28 @@ import java.sql.*;
  */
 public class Koneksi {
     
-    private static Connection connection;
+    private static Connection koneksi;
     
-    public static Connection connect(){
-        return null;
+    public static Connection getKoneksi() {
+        if (koneksi == null) {
+            try {
+                String server = "localhost";
+                String database = "Project_Java";
+                String user = "sa";
+                String password = "admin1234";
+                String url = "jdbc:sqlserver://" + server + ":1691;databaseName="
+                        + database + ";encrypt=false";
+
+                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                koneksi = DriverManager.getConnection(url, user, password);
+                System.out.println("Koneksi Berhasil!");
+            } catch (ClassNotFoundException e) {
+                System.out.println("Driver tidak ditemukan: " + e.getMessage());
+            } catch (SQLException e) {
+                System.out.println("Koneksi gagal: " + e.getMessage());
+            }
+        }
+        return koneksi;
     }
     
 }

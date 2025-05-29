@@ -8,12 +8,12 @@ import java.awt.CardLayout;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
+import com.mycompany.budgeter.model.*;
 /**
  *
  * @author LENOVO
  */
-public class jframe extends javax.swing.JFrame {
+public class jframe extends javax.swing.JFrame {    
 
     /**
      * Creates new form jframe
@@ -46,7 +46,6 @@ public class jframe extends javax.swing.JFrame {
         btnTransaction = new javax.swing.JButton();
         btnHistory = new javax.swing.JButton();
         lblBalance = new javax.swing.JLabel();
-        lblBalance1 = new javax.swing.JLabel();
         panelDisplay = new javax.swing.JPanel();
         transactionSplit = new javax.swing.JPanel();
         panelTransaction = new javax.swing.JPanel();
@@ -136,22 +135,18 @@ public class jframe extends javax.swing.JFrame {
         lblBalance.setFont(new java.awt.Font("Microsoft Sans Serif", 2, 24)); // NOI18N
         lblBalance.setText("Balance :");
 
-        lblBalance1.setFont(new java.awt.Font("Microsoft Sans Serif", 2, 24)); // NOI18N
-        lblBalance1.setText("Rp9.999.999,0");
-
         javax.swing.GroupLayout panelMenuLayout = new javax.swing.GroupLayout(panelMenu);
         panelMenu.setLayout(panelMenuLayout);
         panelMenuLayout.setHorizontalGroup(
             panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMenuLayout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
+                .addContainerGap(33, Short.MAX_VALUE)
                 .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(lblBalance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnTransaction, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnHistory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblBalance1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(21, 21, 21))
+                    .addComponent(btnHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(84, 84, 84))
         );
 
         panelMenuLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnHistory, btnHome, btnTransaction});
@@ -167,9 +162,7 @@ public class jframe extends javax.swing.JFrame {
                 .addComponent(btnHistory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(115, 115, 115)
                 .addComponent(lblBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblBalance1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addContainerGap(217, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(panelMenu);
@@ -204,7 +197,7 @@ public class jframe extends javax.swing.JFrame {
             .addGroup(panelTransactionLayout.createSequentialGroup()
                 .addGap(162, 162, 162)
                 .addComponent(btnToIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 242, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
                 .addComponent(btnToExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(152, 152, 152))
         );
@@ -215,7 +208,7 @@ public class jframe extends javax.swing.JFrame {
                 .addGroup(panelTransactionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnToIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnToExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(427, Short.MAX_VALUE))
+                .addContainerGap(436, Short.MAX_VALUE))
         );
 
         transactionSplit.add(panelTransaction, "cardTransBase");
@@ -281,7 +274,7 @@ public class jframe extends javax.swing.JFrame {
                 .addGroup(incomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(incomePanelLayout.createSequentialGroup()
                         .addComponent(btnSubmitIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 546, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 432, Short.MAX_VALUE)
                         .addComponent(btnBackIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(67, 67, 67))
                     .addGroup(incomePanelLayout.createSequentialGroup()
@@ -314,7 +307,7 @@ public class jframe extends javax.swing.JFrame {
                 .addComponent(lblDetailIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtDetailIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 182, Short.MAX_VALUE)
                 .addGroup(incomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBackIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSubmitIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -399,7 +392,7 @@ public class jframe extends javax.swing.JFrame {
                             .addComponent(txtDetailExpense, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
                             .addComponent(txtValueExpense, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtTimeExpense, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addContainerGap(510, Short.MAX_VALUE))))
+                        .addContainerGap(396, Short.MAX_VALUE))))
         );
         expensePanelLayout.setVerticalGroup(
             expensePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -418,7 +411,7 @@ public class jframe extends javax.swing.JFrame {
                 .addComponent(lblDetailExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtDetailExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 154, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 183, Short.MAX_VALUE)
                 .addGroup(expensePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSubmitExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBackExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -485,7 +478,7 @@ public class jframe extends javax.swing.JFrame {
                                 .addGap(199, 199, 199)
                                 .addComponent(jLabel1))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         homePanelLayout.setVerticalGroup(
             homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -498,7 +491,7 @@ public class jframe extends javax.swing.JFrame {
                 .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
 
         panelDisplay.add(homePanel, "cardHome");
@@ -565,13 +558,13 @@ public class jframe extends javax.swing.JFrame {
                         .addGroup(historyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 615, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnDeleteRow))))
-                .addContainerGap(149, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         historyPanelLayout.setVerticalGroup(
             historyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, historyPanelLayout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(lblHistoryPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
+                .addComponent(lblHistoryPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
@@ -641,7 +634,7 @@ public class jframe extends javax.swing.JFrame {
 
     private void btnBackIncomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackIncomeActionPerformed
         // TODO add your handling code here:
-        cardLayout2.show(transactionSplit, "cardTransBase");
+        cardLayout2.show(transactionSplit, "cardTransBase");        
     }//GEN-LAST:event_btnBackIncomeActionPerformed
 
     private void btnSubmitExpenseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitExpenseActionPerformed
@@ -714,6 +707,7 @@ public class jframe extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -772,7 +766,6 @@ public class jframe extends javax.swing.JFrame {
     private javax.swing.JLabel lblAddExpense;
     private javax.swing.JLabel lblAddIncome;
     private javax.swing.JLabel lblBalance;
-    private javax.swing.JLabel lblBalance1;
     private javax.swing.JLabel lblDetailExpense;
     private javax.swing.JLabel lblDetailIncome;
     private javax.swing.JLabel lblHistoryPanel;

@@ -25,17 +25,6 @@
       EXPENSE
 }
 
-+class "Home"{
-      -dateHome : LocalDateTime      
-      +getDateHome() : LocalDateTime
-      +setDateHome() : void
-      +getTransactionHome() : List<Transaction>
-      +getIncomeHome() : double
-      +getExpenseHome() : double
-      +getBalance() : double
-
-}
-
 +class "History"{
       -transactionHistory : List<Transaction>
       -monthHistory : LocalDate      
@@ -43,11 +32,13 @@
       +setTransactionHistory() : void      
       +getMonthHistory() : LocalDate
       +setMonthHistory() : void
-      +getMonthlyTransaction() : List<Transaction>      
+      +getMonthlyTransaction() : List<Transaction>     
+      +getIncome() : double
+      +getExpense() : double
+      +getBalance() : double
 }
 
 Transaction o-- History
-Transaction o-- Home
 Transaction --> TransactionType
 
 
