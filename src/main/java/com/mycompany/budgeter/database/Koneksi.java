@@ -19,9 +19,9 @@ public class Koneksi {
             try {
                 String server = "localhost";
                 String database = "MYMONEY";
-                String user = "sa";
-                String password = "admin1234";
-                String url = "jdbc:sqlserver://" + server + ":1691;databaseName="
+                String user = "adminisme";
+                String password = "123admin*";
+                String url = "jdbc:sqlserver://" + server + ":1433;databaseName="
                         + database + ";encrypt=false";
 
                 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
