@@ -11,11 +11,18 @@ import java.sql.*;
  * @author jabba
  */
 public class Koneksi {
-    
-    private static Connection connection;
-    
-    public static Connection connect(){
-        return null;
+
+    Connection con = null;
+
+    public static Connection connect() throws SQLException, ClassNotFoundException {
+        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        String connectionUrl = "jdbc:sqlserver://Tenma:1691;databaseName=MYMONEY;encrypt=true;trustServerCertificate=true;user=irhamjab;password=basdatOke123;";
+        Connection con = DriverManager.getConnection(connectionUrl);
+        return con;
     }
-    
+
+    public Connection getCon() {
+        return con;
+    }        
+
 }
