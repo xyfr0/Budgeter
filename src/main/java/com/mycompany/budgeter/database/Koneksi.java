@@ -21,4 +21,8 @@ public class Koneksi {
         return con;
     }
 
+    public Connection getCon() {
+        return con;
+    }        
+
 }
