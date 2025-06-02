@@ -8,6 +8,7 @@ import com.mycompany.budgeter.database.*;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.Date;
 import java.text.SimpleDateFormat;
@@ -15,18 +16,19 @@ import java.time.LocalDateTime;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author LENOVO
  */
-public class jframe extends javax.swing.JFrame {
+public class MyMoneyGUI extends javax.swing.JFrame {
 
     CRUDRecord crudRecord = new CRUDRecord();
 
     /**
-     * Creates new form jframe
+     * Creates new form MyMoneyGUI
      */
     CardLayout cardLayout;
     CardLayout cardLayout2;
@@ -34,8 +36,9 @@ public class jframe extends javax.swing.JFrame {
     String selectedDay = "";
     String selectedMonth = "";
     String selectedYear = "";
+    double balanceApp = 0;
 
-    public jframe() {
+    public MyMoneyGUI() {
         initComponents();
         cardLayout = (CardLayout) (panelDisplay.getLayout());
         cardLayout2 = (CardLayout) (transactionSplit.getLayout());
@@ -98,7 +101,7 @@ public class jframe extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         historyPanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        historyTabel = new javax.swing.JTable();
+        historyTable = new javax.swing.JTable();
         lblHistoryPanel = new javax.swing.JLabel();
         btnDeleteRow = new javax.swing.JButton();
 
@@ -144,7 +147,7 @@ public class jframe extends javax.swing.JFrame {
 
         txtTampilkanSaldo.setBackground(new java.awt.Color(250, 250, 234));
         txtTampilkanSaldo.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 24)); // NOI18N
-        txtTampilkanSaldo.setText("[saldo]");
+        txtTampilkanSaldo.setText(String.format("Rp%.2f", balanceApp));
         txtTampilkanSaldo.setBorder(null);
         txtTampilkanSaldo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -553,10 +556,11 @@ public class jframe extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblTimeSelectedExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(expensePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cboxDayExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(expensePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtTimeExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cboxMonthExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(expensePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(cboxDayExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cboxMonthExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(expensePanelLayout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addGroup(expensePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -592,20 +596,20 @@ public class jframe extends javax.swing.JFrame {
 
         historyPanel.setBackground(new java.awt.Color(243, 243, 231));
 
-        historyTabel.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
-        historyTabel.setModel(new javax.swing.table.DefaultTableModel(
+        historyTable.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        historyTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Date", "TransactionType", "Amount", "Detail"
+                "ID", "Date", "TransactionType", "Amount", "Description"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -616,13 +620,13 @@ public class jframe extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        historyTabel.getTableHeader().setReorderingAllowed(false);
-        jScrollPane2.setViewportView(historyTabel);
-        if (historyTabel.getColumnModel().getColumnCount() > 0) {
-            historyTabel.getColumnModel().getColumn(0).setResizable(false);
-            historyTabel.getColumnModel().getColumn(1).setResizable(false);
-            historyTabel.getColumnModel().getColumn(2).setResizable(false);
-            historyTabel.getColumnModel().getColumn(3).setResizable(false);
+        historyTable.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(historyTable);
+        if (historyTable.getColumnModel().getColumnCount() > 0) {
+            historyTable.getColumnModel().getColumn(0).setResizable(false);
+            historyTable.getColumnModel().getColumn(1).setResizable(false);
+            historyTable.getColumnModel().getColumn(2).setResizable(false);
+            historyTable.getColumnModel().getColumn(3).setResizable(false);
         }
 
         lblHistoryPanel.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 30)); // NOI18N
@@ -695,6 +699,7 @@ public class jframe extends javax.swing.JFrame {
 
     private void btnHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistoryActionPerformed
         // TODO add your handling code here:
+        crudRecord.readTable();
         cardLayout.show(panelDisplay, "cardHistory");
     }//GEN-LAST:event_btnHistoryActionPerformed
 
@@ -742,7 +747,7 @@ public class jframe extends javax.swing.JFrame {
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(this, "Value must be a number !");
             } catch (ParseException ex) {
-                Logger.getLogger(jframe.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(MyMoneyGUI.class.getName()).log(Level.SEVERE, null, ex);
             }
             JOptionPane.showMessageDialog(this, "Data Added!");
             id++;
@@ -756,6 +761,8 @@ public class jframe extends javax.swing.JFrame {
             selectedMonth = "";
             selectedYear = "";
         }
+        crudRecord.updateBalance(balanceApp);
+        txtTampilkanSaldo.setText(String.format("Rp%.2f", balanceApp));
     }//GEN-LAST:event_btnSubmitExpenseActionPerformed
 
     private void btnToExpenseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnToExpenseActionPerformed
@@ -785,7 +792,7 @@ public class jframe extends javax.swing.JFrame {
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(this, "Value must be a number !");
             } catch (ParseException ex) {
-                Logger.getLogger(jframe.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(MyMoneyGUI.class.getName()).log(Level.SEVERE, null, ex);
             }
             JOptionPane.showMessageDialog(this, "Data Added!");
             id++;
@@ -799,21 +806,28 @@ public class jframe extends javax.swing.JFrame {
             selectedMonth = "";
             selectedYear = "";
         }
+        crudRecord.updateBalance(balanceApp);
+        txtTampilkanSaldo.setText(String.format("Rp%.2f", balanceApp));
     }//GEN-LAST:event_btnSubmitIncomeActionPerformed
 
     private void btnDeleteRowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteRowActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel historyAll = (DefaultTableModel) historyTabel.getModel();
+        DefaultTableModel historyAll = (DefaultTableModel) historyTable.getModel();
 
-        if (historyTabel.getSelectedRowCount() == 1) {
-            historyAll.removeRow(historyTabel.getSelectedRow());
+        if (historyTable.getSelectedRowCount() == 1) {
+            int trID = (int) historyTable.getValueAt(historyTable.getSelectedRow(), 0);
+            crudRecord.deleteTransaction(trID);
+            historyAll.removeRow(historyTable.getSelectedRow());
+            JOptionPane.showMessageDialog(this, "Data deleted!");
         } else {
-            if (historyTabel.getRowCount() == 0) {
+            if (historyTable.getRowCount() == 0) {
                 JOptionPane.showMessageDialog(this, "Table is Empty");
             } else {
                 JOptionPane.showMessageDialog(this, "Please select row");
             }
         }
+        crudRecord.updateBalance(balanceApp);
+        txtTampilkanSaldo.setText(String.format("Rp%.2f", balanceApp));
     }//GEN-LAST:event_btnDeleteRowActionPerformed
 
     private void txtValueExpenseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValueExpenseActionPerformed
@@ -821,7 +835,7 @@ public class jframe extends javax.swing.JFrame {
     }//GEN-LAST:event_txtValueExpenseActionPerformed
 
     private void txtTampilkanSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTampilkanSaldoActionPerformed
-        Logger.getLogger("babi");
+        
     }//GEN-LAST:event_txtTampilkanSaldoActionPerformed
     private void showTxtIncome(String selectedDay, String selectedMonth, String selectedYear) {
         txtTimeIncome.setText(selectedDay + "/" + selectedMonth + "/" + selectedYear);
@@ -887,38 +901,6 @@ public class jframe extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(jframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(jframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(jframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(jframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new jframe().setVisible(true);
-//            }
-//        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBackExpense;
@@ -936,7 +918,7 @@ public class jframe extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cboxMonthIncome;
     private javax.swing.JPanel expensePanel;
     private javax.swing.JPanel historyPanel;
-    private javax.swing.JTable historyTabel;
+    private static javax.swing.JTable historyTable;
     private javax.swing.JPanel incomePanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -972,4 +954,8 @@ public class jframe extends javax.swing.JFrame {
     private javax.swing.JTextField txtYearExpense;
     private javax.swing.JTextField txtYearIncome;
     // End of variables declaration//GEN-END:variables
+
+    public static JTable getHistoryTable() {
+        return historyTable;
+    }
 }

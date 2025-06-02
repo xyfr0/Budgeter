@@ -1,7 +1,7 @@
 package com.mycompany.budgeter;
 
 import com.mycompany.budgeter.database.Koneksi;
-import com.mycompany.budgeter.view.jframe;
+import com.mycompany.budgeter.view.MyMoneyGUI;
 import java.sql.*;
 
 /*
@@ -25,7 +25,7 @@ public class Budgeter {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new jframe().setVisible(true);
+                new MyMoneyGUI().setVisible(true);
             }
         });
 
