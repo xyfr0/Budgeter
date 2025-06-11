@@ -14,14 +14,7 @@ import java.sql.*;
  */
 public class Budgeter {
 
-    public static void main(String[] args) {
-        Koneksi koneksi = new Koneksi();
-
-        try {
-            koneksi.connect();
-        } catch (SQLException | ClassNotFoundException cse) {
-            cse.printStackTrace();
-        }
+    public static void main(String[] args) {        
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

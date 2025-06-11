@@ -33,7 +33,6 @@ public class MyMoneyGUI extends javax.swing.JFrame {
      */
     CardLayout cardLayout;
     CardLayout cardLayout2;
-    int id = 1;
     String selectedDay = "";
     String selectedMonth = "";
     String selectedYear = "";
@@ -679,8 +678,10 @@ public class MyMoneyGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistoryActionPerformed
-        // TODO add your handling code here:        
+        // TODO add your handling code here:         
         cardLayout.show(panelDisplay, "cardHistory");
+        DefaultTableModel dtm = (DefaultTableModel) historyTable.getModel();
+        dtm.getDataVector().removeAllElements();
         crudRecord.readTable();
     }//GEN-LAST:event_btnHistoryActionPerformed
 
@@ -718,23 +719,22 @@ public class MyMoneyGUI extends javax.swing.JFrame {
 
     private void btnSubmitExpenseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitExpenseActionPerformed
         // TODO add your handling code here:
-        if (Character.isDigit(txtValueExpense.getText().charAt(0)) || txtValueExpense.getText().equals("") || txtTimeExpense.getText().equals("") || txtDetailExpense.getText().equals("")) {
+        if (txtValueExpense.getText().equals("") || txtTimeExpense.getText().equals("") || txtDetailExpense.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Pastikan masukkan seluruh data");
         } else {
             try {
                 SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
                 Date dateExpense = formatter.parse(txtTimeExpense.getText());
                 double amountExpense = Double.parseDouble(txtValueExpense.getText());
-                Transaction transaction = new Transaction(id, amountExpense, dateExpense, "Income", txtDetailExpense.getText());
+                Transaction transaction = new Transaction(1, amountExpense, dateExpense, "Expense", txtDetailExpense.getText());
 
                 crudRecord.insertTransaction(transaction);
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(this, "Value must be a number !");
-            } catch (ParseException ex) {
+            } catch (ParseException  ex) {
                 Logger.getLogger(MyMoneyGUI.class.getName()).log(Level.SEVERE, null, ex);
             }
             JOptionPane.showMessageDialog(this, "Data Added!");
-            id++;
             txtDetailExpense.setText("");
             txtTimeExpense.setText("");
             txtValueExpense.setText("");
@@ -769,9 +769,7 @@ public class MyMoneyGUI extends javax.swing.JFrame {
                 SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
                 Date dateIncome = formatter.parse(txtTimeIncome.getText());
                 double amountIncome = Double.parseDouble(txtValueIncome.getText());
-                
-                
-                Transaction transaction = new Transaction(id, amountIncome, dateIncome, "Income", txtDetailIncome.getText());
+                Transaction transaction = new Transaction(1, amountIncome, dateIncome, "Income", txtDetailIncome.getText());
                 crudRecord.insertTransaction(transaction);
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(this, "Value must be a number !");
@@ -779,7 +777,6 @@ public class MyMoneyGUI extends javax.swing.JFrame {
                 Logger.getLogger(MyMoneyGUI.class.getName()).log(Level.SEVERE, null, ex);
             }
             JOptionPane.showMessageDialog(this, "Data Added!");
-            id++;
             txtDetailIncome.setText("");
             txtTimeIncome.setText("");
             txtValueIncome.setText("");
