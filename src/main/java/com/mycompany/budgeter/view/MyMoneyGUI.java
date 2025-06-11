@@ -449,7 +449,7 @@ public class MyMoneyGUI extends javax.swing.JFrame {
         });
 
         cboxMonthExpense.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
-        cboxMonthExpense.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }));
+        cboxMonthExpense.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
         cboxMonthExpense.setSelectedIndex(LocalDateTime.now().getMonthValue() - 1);
         cboxMonthExpense.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

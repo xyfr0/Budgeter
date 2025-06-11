@@ -50,8 +50,8 @@ public class CRUDRecord {
                             insertPs.executeUpdate();
                         }
                         break;
-                    } else {
-
+                    } else {                        
+                        transaction.setId(transaction.getId()+1);
                     }
                 }
 
@@ -110,9 +110,4 @@ public class CRUDRecord {
             }
         }
     }
-
-//    public int getUnusedID() throws SQLException, ClassNotFoundException {
-//        int startId = 1;
-//        
-//    }
 }
