@@ -4,47 +4,19 @@
 +class "Transaction"{
       -id : int
       -amount : double
-      -date : LocalDateTime
+      -date : Date
       -transactionType : String
-      -description : String
-      +Transaction(id : int, amount : double, date: LocalDateTime, transactionType : String, description : String) : Transaction
-      +getAmount() : double
-      +getDate() : LocalDateTime
-      +getCategory() : String
-      +getDescription() : String
-      +getTransactionType(): String
-      +setAmount() : void
-      +setTime() : void
-      +setCategory() : void
-      +setDescription() : void      
-      +setTransactionType(): String
-}
-
-+enum "TransactionType"{
-      INCOME
-      EXPENSE
+      -description : String      
+      +addTransaction()
+      +deleteTransaction()
 }
 
 +class "History"{
       -transactionHistory : List<Transaction>
-      -monthHistory : LocalDate      
-      +getTransactionHistory() : List<Transaction>
-      +setTransactionHistory() : void      
-      +getMonthHistory() : LocalDate
-      +setMonthHistory() : void
-      +getMonthlyTransaction() : List<Transaction>     
-      +getIncome() : double
-      +getExpense() : double
-      +getBalance() : double
-}
-
-+class "Koneksi"{
-      -koneksi : Connection
-      +connect() : Connection
+      +readTable()
 }
 
 Transaction o-- History
-Transaction --> TransactionType
 
 
 

@@ -4,6 +4,7 @@
  */
 package com.mycompany.budgeter.database;
 
+import com.mycompany.budgeter.model.Transaction;
 import com.mycompany.budgeter.view.MyMoneyGUI;
 import java.sql.*;
 import java.util.Date;
@@ -27,17 +28,17 @@ public class CRUDRecord {
      * @param transactionType
      * @param description
      */
-    public void insertTransaction(int transactionID, double amount, Date transactionDate, String transactionType, String description) {
+    public void insertTransaction(Transaction transaction) {
 
         try (Connection conn = Koneksi.connect(); PreparedStatement ps = conn.prepareStatement(SQL_QUERY
                 + "INSERT INTO TransactionHistory (TransactionID, Amount, TransactionDate, TransactionType, Description) "
                 + "VALUES (?, ?, ?, ?, ?);"
-        )) {
-            ps.setInt(1, transactionID);
-            ps.setDouble(2, amount);
-            ps.setDate(3, new java.sql.Date(transactionDate.getTime()));
-            ps.setString(4, transactionType);
-            ps.setString(5, description);
+        )) {            
+            ps.setInt(1, transaction.getId());
+            ps.setDouble(2, transaction.getAmount());
+            ps.setObject(3, transaction.getDate());
+            ps.setString(4, transaction.getTransactionType());
+            ps.setString(5, transaction.getDescription());
             ps.executeUpdate();
         } catch (SQLException | ClassNotFoundException sce) {
             sce.printStackTrace();

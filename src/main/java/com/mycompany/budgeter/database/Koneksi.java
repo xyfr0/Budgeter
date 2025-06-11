@@ -13,10 +13,13 @@ import java.sql.*;
 public class Koneksi {
 
     Connection con = null;
+    static String database = "Tenma";
+    static String port = "1691";
+    static String databaseName = "MYMONEY";
 
     public static Connection connect() throws SQLException, ClassNotFoundException {
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        String connectionUrl = "jdbc:sqlserver://Tenma:1691;databaseName=MYMONEY;encrypt=true;trustServerCertificate=true;user=irhamjab;password=basdatOke123;";
+        String connectionUrl = String.format("jdbc:sqlserver://%s:%s;databaseName=%s;encrypt=true;trustServerCertificate=true;user=irhamjab;password=basdatOke123;", database, port, databaseName);
         Connection con = DriverManager.getConnection(connectionUrl);
         return con;
     }

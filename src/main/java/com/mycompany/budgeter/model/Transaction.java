@@ -4,30 +4,30 @@ package com.mycompany.budgeter.model;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 /**
  *
  * @author MSIG6
  */
-import java.time.LocalDateTime;
+import java.util.Date;
 
 public class Transaction {
 private int id;
 private double amount;
-private LocalDateTime date;
+private Date date;
 private String transactionType;
 private String description;
-private String category;
 
-    public Transaction(int id, double amount, LocalDateTime date, String transactionType, String description, String category) {
+    public Transaction(int id, double amount, Date date, String transactionType, String description) {
         this.id = id;
         this.amount = amount;
         this.date = date;
         this.transactionType = transactionType;
-        this.description = description;
-        this.category = category;
+        this.description = description;        
     }
+    
+    
 
     public int getId() {
         return id;
@@ -45,11 +45,11 @@ private String category;
         this.amount = amount;
     }
 
-    public LocalDateTime getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(LocalDateTime date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -69,13 +69,7 @@ private String category;
         this.description = description;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
+    
 }
 
 
