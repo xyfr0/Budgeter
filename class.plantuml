@@ -1,0 +1,23 @@
+@startuml class
+
+
++class "Transaction"{
+      -id : int
+      -amount : double
+      -date : Date
+      -transactionType : String
+      -description : String      
+      +addTransaction()
+      +deleteTransaction()
+}
+
++class "History"{
+      -transactionHistory : List<Transaction>
+      +readTable()
+}
+
+Transaction o-- History
+
+
+
+@enduml
